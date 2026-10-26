@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B91C1C"/></marker>
+  </defs>
+  <rect width="1200" height="460" fill="#FFFFFF"/>
+  <text x="48" y="58" font-size="26" font-weight="700" fill="#0F172A">Change gate</text>
+  <text x="48" y="86" font-size="15" fill="#64748B">Every change reaches main through one path. The required check cannot be bypassed.</text>
+  <g font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="1.5">
+    <text x="48" y="140">1  PREPARE</text><text x="278" y="140">2  PROPOSE</text><text x="508" y="140">3  VERIFY</text><text x="738" y="140">4  GATE</text><text x="968" y="140">5  RECORD</text>
+  </g>
+  <rect x="48" y="160" width="190" height="110" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+  <text x="143" y="200" font-size="16" font-weight="700" fill="#0F172A" text-anchor="middle">Agent or human</text>
+  <text x="143" y="222" font-size="13" fill="#475569" text-anchor="middle">makes a change and</text>
+  <text x="143" y="240" font-size="13" fill="#475569" text-anchor="middle">records a restore path</text>
+  <rect x="278" y="160" width="190" height="110" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+  <text x="373" y="200" font-size="16" font-weight="700" fill="#0F172A" text-anchor="middle">Pull request</text>
+  <text x="373" y="222" font-size="13" fill="#475569" text-anchor="middle">with Definition-of-Done</text>
+  <text x="373" y="240" font-size="13" fill="#475569" text-anchor="middle">checklist</text>
+  <rect x="508" y="160" width="190" height="110" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+  <text x="603" y="200" font-size="16" font-weight="700" fill="#064E3B" text-anchor="middle">CI check</text>
+  <text x="603" y="222" font-size="13" fill="#065F46" text-anchor="middle">read-only token,</text>
+  <text x="603" y="240" font-size="13" fill="#065F46" text-anchor="middle">DoD + secrets scan</text>
+  <rect x="738" y="160" width="190" height="110" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+  <text x="833" y="200" font-size="16" font-weight="700" fill="#064E3B" text-anchor="middle">Ruleset</text>
+  <text x="833" y="222" font-size="13" fill="#065F46" text-anchor="middle">required check, no bypass,</text>
+  <text x="833" y="240" font-size="13" fill="#065F46" text-anchor="middle">human review if needed</text>
+  <rect x="968" y="160" width="190" height="110" rx="10" fill="#0F2A44"/>
+  <text x="1063" y="205" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Main</text>
+  <text x="1063" y="228" font-size="13" fill="#CBD5E1" text-anchor="middle">auditable history</text>
+  <path d="M238,215 H270" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M468,215 H500" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M698,215 H730" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+  <text x="714" y="205" font-size="12" fill="#047857" text-anchor="middle">pass</text>
+  <path d="M928,215 H960" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M603,270 V350 H373 V278" stroke="#B91C1C" stroke-width="2" fill="none" marker-end="url(#r)"/>
+  <rect x="418" y="334" width="140" height="32" rx="16" fill="#FEF2F2" stroke="#B91C1C"/>
+  <text x="488" y="355" font-size="13" fill="#991B1B" text-anchor="middle">fail: fix and resubmit</text>
+  <text x="48" y="420" font-size="13" fill="#64748B">Force-push and deletion of main are blocked. The owner has no bypass.</text>
+</svg>
