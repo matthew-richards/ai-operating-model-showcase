@@ -22,14 +22,14 @@ Not every control here is enforced by a machine yet. This table says which is wh
 
 | Control | Status | How |
 |---|---|---|
-| Definition-of-Done check required before merge to main | Enforced | GitHub repository ruleset with the check required |
+| Definition-of-Done, secrets scan, and Markdown lint checks required before merge to main | Pending | CI workflows are written but not yet added to this repository; the ruleset will require them once they land |
 | No bypass of the ruleset, including the owner | Enforced | Ruleset has an empty bypass list |
 | Force-push and deletion of main blocked | Enforced | Ruleset rules |
-| Tracing of model calls through OpenRouter | Enforced | Opik tracing |
+| Tracing of model calls through OpenRouter | In place (monitoring, not a gate) | Opik tracing records calls; it does not block anything |
 | Send and approval prompts for outgoing actions | Platform-enforced | Built into the agent platform |
 | Agent claim and branch-ownership rules | Written policy | Shared rules card loaded on every run, plus incident ledger |
 | Visible, logged commands for every agent | Written policy | Not yet enforced across all agents |
-| Some human approval gates | Written policy | Followed by agents, reviewed through the ledger |
+| Approval before publishing, deleting, spending money, or changing a calendar from email | Written policy | Followed by agents, reviewed through the ledger |
 
 Closing the gap between written policy and enforcement is tracked as future work.
 
@@ -37,7 +37,7 @@ Closing the gap between written policy and enforcement is tracked as future work
 
 ![Change gate](diagrams/02-change-gate.png)
 
-This repository uses the same gate it describes. Every pull request runs a Definition-of-Done check, a secrets scan, and a Markdown lint, and the main branch ruleset requires them. See [docs/ruleset.json](docs/ruleset.json).
+This repository is meant to use the same gate it describes. The CI checks (a Definition-of-Done check, a secrets scan, and a Markdown lint) are pending: they are not running yet. Today the main branch ruleset blocks force-push and deletion with no bypass; once the workflows land, it will also require the three checks, as shown in [docs/ruleset.json](docs/ruleset.json).
 
 ## Read more
 
@@ -50,7 +50,7 @@ The full write-up, including architecture, a case study on a shared control plan
 | `docs/overview.md` | Full narrative overview |
 | `docs/ruleset.json` | Main branch ruleset applied to this repository |
 | `diagrams/` | Diagram sources (SVG) and PNG exports |
-| `.github/` | Workflows and pull request template that enforce the checks above |
+| `.github/` | Pull request template (CI workflows pending) |
 
 ## License
 

@@ -5,7 +5,7 @@
   </defs>
   <rect width="1200" height="460" fill="#FFFFFF"/>
   <text x="48" y="58" font-size="26" font-weight="700" fill="#0F172A">Change gate</text>
-  <text x="48" y="86" font-size="15" fill="#64748B">Every change reaches main through one path. The required check cannot be bypassed.</text>
+  <text x="48" y="86" font-size="15" fill="#64748B">Every change reaches main through one path. The ruleset cannot be bypassed.</text>
   <g font-size="12" font-weight="700" fill="#94A3B8" letter-spacing="1.5">
     <text x="48" y="140">1  PREPARE</text><text x="278" y="140">2  PROPOSE</text><text x="508" y="140">3  VERIFY</text><text x="738" y="140">4  GATE</text><text x="968" y="140">5  RECORD</text>
   </g>
@@ -21,10 +21,11 @@
   <text x="603" y="200" font-size="16" font-weight="700" fill="#064E3B" text-anchor="middle">CI check</text>
   <text x="603" y="222" font-size="13" fill="#065F46" text-anchor="middle">read-only token,</text>
   <text x="603" y="240" font-size="13" fill="#065F46" text-anchor="middle">DoD + secrets scan</text>
+  <text x="603" y="258" font-size="13" fill="#065F46" text-anchor="middle">(pending)</text>
   <rect x="738" y="160" width="190" height="110" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
   <text x="833" y="200" font-size="16" font-weight="700" fill="#064E3B" text-anchor="middle">Ruleset</text>
-  <text x="833" y="222" font-size="13" fill="#065F46" text-anchor="middle">required check, no bypass,</text>
-  <text x="833" y="240" font-size="13" fill="#065F46" text-anchor="middle">human review if needed</text>
+  <text x="833" y="222" font-size="13" fill="#065F46" text-anchor="middle">no force-push or delete,</text>
+  <text x="833" y="240" font-size="13" fill="#065F46" text-anchor="middle">no bypass</text>
   <rect x="968" y="160" width="190" height="110" rx="10" fill="#0F2A44"/>
   <text x="1063" y="205" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Main</text>
   <text x="1063" y="228" font-size="13" fill="#CBD5E1" text-anchor="middle">auditable history</text>

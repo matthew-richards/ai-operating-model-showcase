@@ -33,13 +33,13 @@ Agents work on their own when the work is routine and reversible. Anything with 
 - **Visible waits.** Work that needs my decision gets a human-in-the-loop label on the board, so a pending approval shows up as a wait instead of stalling silently.
 - **Refusals are final.** If I decline or don't answer, the agent doesn't retry or find another route to the same action.
 
-**Status.** Some of these gates are enforced by the platform, such as send and approval prompts. Others are written policy that the agents follow.
+**Status.** Send and approval prompts for outgoing messages are enforced by the agent platform. Approval before deleting, spending money, publishing, and changing a calendar from email is written policy that the agents follow.
 
 ## Observability
 
 I can't govern what I can't see, so agent activity is meant to be visible and traceable after the fact.
 
-- **Visible commands.** Every command an agent runs is shown in a visible terminal before it runs and logged with a timestamp. Hidden background commands are not allowed.
+- **Visible commands.** Agents are required to show every command in a visible terminal before it runs and to log it with a timestamp. Hidden background commands are not allowed by policy.
 - **Traced model calls.** Model calls routed through OpenRouter are traced in Opik, an open-source LLM tracing tool, so the data can be used to compare models, catch quality drift, and keep spending in check.
 - **Review, not trust.** When something goes wrong, the logs and traces are the evidence behind the incident ledger, not an agent's own account of what it did.
 
@@ -69,7 +69,7 @@ One of my projects collects data from a vendor API with strict rate limits. Goin
 
 - **One secrets store.** Credentials are injected at runtime from a secrets manager. Nothing is committed, and CI does not keep a second copy.
 - **Least-privilege CI.** Pipeline jobs get a read-only token. Cloud access is off by default, and short-lived federated credentials are the only allowed pattern.
-- **Controls are enforced, not suggested.** Every change must include a Definition-of-Done checklist that CI verifies. A repository ruleset requires that check before anything merges to main, blocks force-pushes and branch deletion, and allows no bypass, not even for me.
+- **Controls are enforced, not suggested.** Every change must include a Definition-of-Done checklist. CI verifies the checklist is present and fully ticked; items are self-attested. A repository ruleset blocks force-pushes and branch deletion and allows no bypass, not even for me. Requiring the CI checks before merge is pending for this public repository.
 - **Sensitive operational state** (quota counters, local data) is excluded from version control by policy.
 
 ## Lessons

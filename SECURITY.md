@@ -8,5 +8,6 @@ If you find something here that looks sensitive, such as a credential, hostname,
 
 ## Controls on this repository
 
-- Every pull request runs a secrets scan (gitleaks).
-- The main branch requires the Definition-of-Done check, blocks force-push and deletion, and allows no bypass.
+- The main branch blocks force-push and deletion and allows no bypass.
+- GitHub secret scanning and push protection are on.
+- CI checks (Definition of Done, gitleaks secrets scan, Markdown lint) are pending and not running yet.
