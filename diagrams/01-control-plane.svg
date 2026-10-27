@@ -1,76 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
-  <defs>
-    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
-    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B45309"/></marker>
-    <marker id="gr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker>
-  </defs>
-  <rect width="1200" height="640" rx="24" fill="#FFFFFF"/>
-  <text x="48" y="58" font-size="26" font-weight="700" fill="#0F172A">Control plane</text>
-  <text x="48" y="86" font-size="15" fill="#64748B">Agents act through a governed layer. Consequential actions route back to the human owner.</text>
-  <!-- governed zone -->
-  <rect x="330" y="120" width="560" height="440" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-dasharray="6 5"/>
-  <text x="350" y="148" font-size="12" font-weight="700" fill="#64748B" letter-spacing="1.5">GOVERNED LAYER (VERSION-CONTROLLED)</text>
-  <!-- human -->
-  <rect x="48" y="270" width="200" height="90" rx="10" fill="#0F2A44"/>
-  <text x="148" y="308" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">Human owner</text>
-  <text x="148" y="332" font-size="13" fill="#CBD5E1" text-anchor="middle">decides and approves</text>
-  <!-- agents -->
-  <rect x="370" y="270" width="200" height="90" rx="10" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
-  <text x="470" y="308" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">AI agents</text>
-  <text x="470" y="332" font-size="13" fill="#475569" text-anchor="middle">via chat interface</text>
-  <!-- operating model -->
-  <rect x="650" y="360" width="200" height="100" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
-  <text x="750" y="396" font-size="17" font-weight="700" fill="#064E3B" text-anchor="middle">Operating model</text>
-  <text x="750" y="420" font-size="13" fill="#065F46" text-anchor="middle">skills, process docs,</text>
-  <text x="750" y="438" font-size="13" fill="#065F46" text-anchor="middle">state records</text>
-  <!-- budget gates -->
-  <rect x="650" y="170" width="200" height="100" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
-  <text x="750" y="206" font-size="17" font-weight="700" fill="#064E3B" text-anchor="middle">API budget gates</text>
-  <text x="750" y="230" font-size="13" fill="#065F46" text-anchor="middle">rolling window</text>
-  <text x="750" y="248" font-size="13" fill="#065F46" text-anchor="middle">per API</text>
-  <!-- human gate -->
-  <rect x="370" y="440" width="200" height="90" rx="10" fill="#FFFBEB" stroke="#B45309" stroke-width="1.5"/>
-  <text x="470" y="478" font-size="17" font-weight="700" fill="#78350F" text-anchor="middle">Human gate</text>
-  <text x="470" y="502" font-size="13" fill="#92400E" text-anchor="middle">consequential actions</text>
-  <!-- externals -->
-  <rect x="950" y="360" width="200" height="100" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
-  <text x="1050" y="404" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Knowledge base</text>
-  <text x="1050" y="428" font-size="13" fill="#64748B" text-anchor="middle">read and write</text>
-  <rect x="950" y="170" width="200" height="100" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
-  <text x="1050" y="206" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Rate-limited</text>
-  <text x="1050" y="230" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">external APIs</text>
-  <rect x="370" y="160" width="200" height="70" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
-  <text x="470" y="192" font-size="16" font-weight="700" fill="#0F172A" text-anchor="middle">Secrets manager</text>
-  <text x="470" y="213" font-size="12" fill="#64748B" text-anchor="middle">injected at runtime only</text>
-  <!-- edges -->
-  <path d="M248,315 H362" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M470,230 V262" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#a)"/>
-  <path d="M570,300 C610,300 610,220 642,220" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M570,330 C610,330 610,410 642,410" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M850,400 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <text x="900" y="377" font-size="11" fill="#334155" text-anchor="middle">writes: decisions,</text>
-  <text x="900" y="391" font-size="11" fill="#334155" text-anchor="middle">notes, state</text>
-  <path d="M950,422 H858" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#gr)"/>
-  <text x="900" y="438" font-size="11" fill="#047857" text-anchor="middle">reads: context,</text>
-  <text x="900" y="452" font-size="11" fill="#047857" text-anchor="middle">prior decisions</text>
-  <path d="M850,205 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <text x="900" y="182" font-size="11" fill="#334155" text-anchor="middle">requests</text>
-  <text x="900" y="196" font-size="11" fill="#334155" text-anchor="middle">(within budget)</text>
-  <path d="M950,240 H858" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#gr)"/>
-  <text x="900" y="256" font-size="11" fill="#047857" text-anchor="middle">responses +</text>
-  <text x="900" y="270" font-size="11" fill="#047857" text-anchor="middle">rate-limit headers</text>
-  <path d="M750,460 V485 H578" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#g)"/>
-  <path d="M370,485 C300,485 148,470 148,368" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#g)"/>
-  <text x="260" y="470" font-size="12" fill="#92400E">waits for approval</text>
-  <!-- github -->
-  <rect x="950" y="495" width="200" height="100" rx="10" fill="#0F2A44"/>
-  <text x="1050" y="532" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">GitHub</text>
-  <text x="1050" y="556" font-size="13" fill="#CBD5E1" text-anchor="middle">agile board, repos,</text>
-  <text x="1050" y="574" font-size="13" fill="#CBD5E1" text-anchor="middle">required checks</text>
-  <path d="M950,530 H825 V468" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <text x="888" y="506" font-size="12" fill="#334155" text-anchor="middle">out: rules, checks,</text>
-  <text x="888" y="521" font-size="12" fill="#334155" text-anchor="middle">approvals</text>
-  <path d="M795,468 V565 H942" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#gr)"/>
-  <text x="870" y="584" font-size="12" fill="#047857" text-anchor="middle">in: PRs, card updates,</text>
-  <text x="870" y="599" font-size="12" fill="#047857" text-anchor="middle">doc commits</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1090" height="1290" viewBox="0 0 1090 1290" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker><marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker><marker id="s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#94A3B8"/></marker><marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6D28D9"/></marker></defs>
+<rect width="1090" height="1290" rx="24" fill="#FFFFFF"/>
+<text x="48" y="60" font-size="30" font-weight="700" fill="#0F172A" text-anchor="start">Control plane</text>
+<g transform="translate(30,-60)">
+<rect x="40" y="240" width="230" height="96" rx="12" fill="#0F2A44" stroke="#0F2A44" stroke-width="1.5"/>
+<text x="155.0" y="283.0" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="middle">Human owner</text>
+<text x="155.0" y="309.0" font-size="19" fill="#CBD5E1" text-anchor="middle">decides and approves</text>
+<rect x="380" y="190" width="260" height="170" rx="12" fill="#F1F5F9" stroke="#64748B" stroke-width="1.5"/>
+<text x="400" y="222" font-size="19" font-weight="700" fill="#0F172A" text-anchor="start">GitHub gate</text>
+<text x="400" y="244" font-size="17" fill="#475569" text-anchor="start" font-style="italic">in place</text>
+<text x="400" y="268" font-size="17" fill="#475569" text-anchor="start">agile board, repos,</text>
+<text x="400" y="290" font-size="17" fill="#475569" text-anchor="start">required checks</text>
+<text x="400" y="312" font-size="17" fill="#475569" text-anchor="start">Human gate: owner approves</text>
+<text x="400" y="334" font-size="17" fill="#475569" text-anchor="start">PRs and merges</text>
+<path d="M270,290 H372" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="325" y="280" font-size="17" fill="#334155" text-anchor="middle">approves</text>
+<path d="M410,400 V368" stroke="#334155" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+<path d="M620,360 V392" stroke="#047857" stroke-width="2.5" fill="none" marker-end="url(#g)"/>
+<text x="420" y="388" font-size="17" fill="#334155" text-anchor="start">PRs</text>
+<rect x="740" y="150" width="240" height="90" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="860.0" y="190.0" font-size="21" font-weight="700" fill="#0F172A" text-anchor="middle">Secrets manager</text>
+<text x="860.0" y="216.0" font-size="19" fill="#64748B" text-anchor="middle">runtime only</text>
+<path d="M860,240 V257" stroke="#94A3B8" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#s)"/>
+<rect x="730" y="265" width="260" height="100" rx="12" fill="#EEF2F7" stroke="#0F2A44" stroke-width="1.5"/>
+<text x="860.0" y="298.0" font-size="21" font-weight="700" fill="#0F2A44" text-anchor="middle">OpenShell provider store</text>
+<text x="860.0" y="324.0" font-size="19" fill="#475569" text-anchor="middle">real credentials</text>
+<text x="860.0" y="350.0" font-size="19" fill="#475569" text-anchor="middle" font-style="italic">rolling out</text>
+<path d="M860,365 V392" stroke="#94A3B8" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#s)"/>
+<text x="870" y="390" font-size="16" fill="#64748B" text-anchor="start">at runtime</text>
+<path d="M90,336 V392" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<text x="100" y="362" font-size="19" fill="#334155" text-anchor="start">tasks</text>
+<path d="M230,392 V344" stroke="#047857" stroke-width="3" fill="none" marker-end="url(#g)"/>
+<text x="220" y="382" font-size="19" fill="#047857" text-anchor="end">answers</text>
+<rect x="40" y="400" width="950" height="370" rx="16" fill="#EEF2F7" stroke="#0F2A44" stroke-width="3"/>
+<text x="64" y="432" font-size="19" font-weight="700" fill="#0F2A44" text-anchor="start">OpenShell supervisor: policy check, credential swap (rolling out)</text>
+<rect x="72" y="452" width="886" height="270" rx="12" fill="#FFFFFF" stroke="#0F2A44" stroke-width="1.8" stroke-dasharray="8 5"/>
+<text x="96" y="484" font-size="19" font-weight="700" fill="#0F2A44" text-anchor="start">Agent sandbox</text>
+<text x="96" y="510" font-size="17" fill="#475569" text-anchor="start">files, processes, system calls</text>
+<rect x="110" y="532" width="270" height="90" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text x="245.0" y="572.0" font-size="21" font-weight="700" fill="#0F172A" text-anchor="middle">AI agents</text>
+<text x="245.0" y="598.0" font-size="19" fill="#475569" text-anchor="middle">chat interface</text>
+<rect x="470" y="532" width="460" height="90" rx="12" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+<text x="700.0" y="572.0" font-size="21" font-weight="700" fill="#064E3B" text-anchor="middle">API rate limit</text>
+<text x="700.0" y="598.0" font-size="19" fill="#065F46" text-anchor="middle">rolling window per API</text>
+<path d="M380,566 H462" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M470,600 H388" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#g)"/>
+<path d="M140,622 V716" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<path d="M350,716 V630" stroke="#047857" stroke-width="3" fill="none" marker-end="url(#g)"/>
+<text x="245" y="676" font-size="19" fill="#334155" text-anchor="middle">calls</text>
+<rect x="380" y="880" width="230" height="210" rx="12" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+<text x="495.0" y="956.0" font-size="21" font-weight="700" fill="#064E3B" text-anchor="middle">MCP gateway</text>
+<text x="495.0" y="982.0" font-size="19" fill="#065F46" text-anchor="middle">tools, arguments,</text>
+<text x="495.0" y="1008.0" font-size="19" fill="#065F46" text-anchor="middle">caller, logging</text>
+<text x="495.0" y="1034.0" font-size="19" fill="#065F46" text-anchor="middle" font-style="italic">rolling out</text>
+<path d="M420,770 V872" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<path d="M570,880 V778" stroke="#047857" stroke-width="3" fill="none" marker-end="url(#g)"/>
+<text x="430" y="824" font-size="19" fill="#334155" text-anchor="start">tool calls</text>
+<text x="580" y="824" font-size="19" fill="#047857" text-anchor="start">results</text>
+<rect x="300" y="1170" width="390" height="100" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="495.0" y="1215.0" font-size="21" font-weight="700" fill="#0F172A" text-anchor="middle">Internet edge</text>
+<text x="495.0" y="1241.0" font-size="19" fill="#64748B" text-anchor="middle">enforces limits</text>
+<path d="M420,1090 V1162" stroke="#334155" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+<path d="M570,1170 V1098" stroke="#047857" stroke-width="2.5" fill="none" marker-end="url(#g)"/>
+<path d="M320,770 V1162" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M345,1170 V778" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#g)"/>
+<text x="310" y="1000" font-size="19" fill="#334155" text-anchor="end">per-server token</text>
+<rect x="40" y="1160" width="220" height="140" rx="12" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+<text x="150.0" y="1201.0" font-size="21" font-weight="700" fill="#064E3B" text-anchor="middle">MCP servers</text>
+<text x="150.0" y="1227.0" font-size="19" fill="#065F46" text-anchor="middle">for example GitHub,</text>
+<text x="150.0" y="1253.0" font-size="19" fill="#065F46" text-anchor="middle">AI Operating Model,</text>
+<text x="150.0" y="1279.0" font-size="19" fill="#065F46" text-anchor="middle">knowledge base</text>
+<path d="M300,1195 H268" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M260,1240 H292" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#g)"/>
+<rect x="740" y="1160" width="240" height="145" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="860.0" y="1215.5" font-size="21" font-weight="700" fill="#0F172A" text-anchor="middle">Model providers</text>
+<text x="860.0" y="1241.5" font-size="19" fill="#64748B" text-anchor="middle">OpenRouter</text>
+<text x="860.0" y="1267.5" font-size="19" fill="#64748B" text-anchor="middle">Ollama</text>
+<path d="M690,1195 H732" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M740,1240 H698" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#g)"/>
+<text x="860" y="1146" font-size="19" fill="#334155" text-anchor="middle">model calls</text>
+<rect x="760" y="880" width="260" height="96" rx="12" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.5"/>
+<text x="890.0" y="923.0" font-size="21" font-weight="700" fill="#4C1D95" text-anchor="middle">Observability (Opik)</text>
+<text x="890.0" y="949.0" font-size="19" fill="#5B21B6" text-anchor="middle">traces</text>
+<path d="M660,1170 V930 H752" stroke="#6D28D9" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#p)"/>
+<text x="672" y="1150" font-size="17" fill="#6D28D9" text-anchor="start">live</text>
+<text x="768" y="1004" font-size="17" fill="#6D28D9" text-anchor="start">planned</text>
+<path d="M760,1024 H800" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="810" y="1030" font-size="16" fill="#334155" text-anchor="start">outbound (away from agents)</text>
+<path d="M760,1050 H800" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#g)"/>
+<text x="810" y="1056" font-size="16" fill="#047857" text-anchor="start">inbound (back to agents)</text>
+<path d="M760,1076 H800" stroke="#94A3B8" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#s)"/>
+<text x="810" y="1082" font-size="16" fill="#64748B" text-anchor="start">credentials, one way only</text>
+<path d="M760,1102 H800" stroke="#6D28D9" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#p)"/>
+<text x="810" y="1108" font-size="16" fill="#6D28D9" text-anchor="start">traces, one way only</text>
+</g>
 </svg>
