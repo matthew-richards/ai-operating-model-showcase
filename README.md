@@ -2,6 +2,16 @@
 
 A working pattern for running AI agents under the same controls you would expect from an enterprise security program.
 
+## Featured project: Jarvis
+
+<a href="jarvis/README.md"><img src="jarvis/assets/rokid-glasses.jpg" alt="Rokid Glasses" width="220" align="right"></a>
+
+Jarvis is my personal AI assistant: an AI that helps me wherever I'm wearing my Rokid Glasses. It's also a real-world system for testing guardrails, trying out architecture ideas, and comparing AI models on accuracy and speed, including speech-to-text.
+
+**[Explore Jarvis →](jarvis/README.md)**
+
+<br clear="right">
+
 ![Control plane](diagrams/01-control-plane.png)
 
 ## Why
@@ -43,7 +53,7 @@ This repository is meant to use the same gate it describes. The CI checks (a Def
 
 The full write-up, including architecture, a case study on a shared control plane for rate-limited APIs, and lessons learned, is in [docs/overview.md](docs/overview.md).
 
-For a personal-assistant case study, see [Jarvis](jarvis/README.md): a personal AI built around smart glasses and used to test guardrails.
+For a personal AI built around smart glasses, see the [Jarvis rundown](jarvis/README.md).
 
 ## Repository layout
 
@@ -51,7 +61,7 @@ For a personal-assistant case study, see [Jarvis](jarvis/README.md): a personal 
 |---|---|
 | `docs/overview.md` | Full narrative overview |
 | `docs/ruleset.json` | Main branch ruleset applied to this repository |
-| `jarvis/` | Jarvis personal-assistant rundown |
+| `jarvis/` | Jarvis, my personal AI on Rokid Glasses ([rundown](jarvis/README.md)) |
 | `diagrams/` | Diagram sources (SVG) and PNG exports |
 | `.github/` | Pull request template (CI workflows pending) |
 
