@@ -93,3 +93,7 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 .directory
+
+# Vale: synced style packages (keep only project config)
+.github/styles/*
+!.github/styles/config/
