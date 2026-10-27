@@ -10,10 +10,13 @@ markdownlint
 Vale
 repo
 repos
-ruleset
-rulesets
+[Rr]uleset
+[Rr]ulesets
 README
 SDK
 LLM
 LLMs
 [Ww]orkflow
+Opik
+sideloaded
+lockdown
