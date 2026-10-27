@@ -52,4 +52,11 @@
   <path d="M750,460 V485 H578" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#g)"/>
   <path d="M370,485 C300,485 148,470 148,368" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#g)"/>
   <text x="260" y="470" font-size="12" fill="#92400E">waits for approval</text>
+  <!-- github -->
+  <rect x="950" y="490" width="200" height="90" rx="10" fill="#0F2A44"/>
+  <text x="1050" y="524" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">GitHub</text>
+  <text x="1050" y="548" font-size="13" fill="#CBD5E1" text-anchor="middle">board, repos,</text>
+  <text x="1050" y="566" font-size="13" fill="#CBD5E1" text-anchor="middle">required checks</text>
+  <path d="M950,535 H820 V468" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="885" y="525" font-size="12" fill="#475569" text-anchor="middle">holds rules + checks</text>
 </svg>
