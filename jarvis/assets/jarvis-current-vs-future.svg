@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="740" viewBox="0 0 1200 740" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#333"/></marker>
+<marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#1f7a36"/></marker>
+</defs>
+<rect width="1200" height="740" fill="#fff"/>
+<text x="600" y="38" text-anchor="middle" font-size="28" font-weight="bold" fill="#222">Jarvis: current state vs future state</text>
+<g font-size="19" text-anchor="middle">
+<!-- Current -->
+<rect x="50" y="60" width="710" height="200" rx="12" fill="#eef5ff" stroke="#4a7bd0" stroke-width="2"/>
+<text x="70" y="92" font-size="24" font-weight="bold" fill="#2a5aa8" text-anchor="start">Current</text>
+<rect x="70" y="110" width="230" height="120" rx="10" fill="#fff" stroke="#4a7bd0" stroke-width="2"/>
+<text x="185" y="150" font-size="21" font-weight="bold">Stock Rokid Glasses</text>
+<text x="185" y="180">"Hi Rokid,</text><text x="185" y="205">open Jarvis"</text>
+<rect x="340" y="100" width="400" height="140" rx="10" fill="#fff3c4" stroke="#d4a017" stroke-width="4"/>
+<text x="540" y="140" font-size="21" font-weight="bold">Rokid platform speech-to-text</text>
+<text x="540" y="175">Jarvis is a custom agent</text>
+<text x="540" y="205">Text streams to Jarvis</text>
+<line x1="300" y1="170" x2="335" y2="170" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+<!-- Future -->
+<rect x="50" y="290" width="710" height="200" rx="12" fill="#f4eefc" stroke="#7a3db8" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="70" y="322" font-size="24" font-weight="bold" fill="#5a2a90" text-anchor="start">Future (planned)</text>
+<rect x="70" y="340" width="230" height="120" rx="10" fill="#fff" stroke="#7a3db8" stroke-width="2"/>
+<text x="185" y="390" font-size="21" font-weight="bold">Rokid Glasses</text>
+<text x="185" y="420">running my own app</text>
+<rect x="340" y="330" width="400" height="140" rx="10" fill="#fff3c4" stroke="#d4a017" stroke-width="4"/>
+<text x="540" y="368" font-size="21" font-weight="bold">My app + Rokid speech SDK</text>
+<text x="540" y="400">Swappable speech-to-text models</text>
+<text x="540" y="428">(local or cloud), compared</text>
+<text x="540" y="453">on accuracy and speed</text>
+<line x1="300" y1="400" x2="335" y2="400" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+<!-- Shared column -->
+<rect x="820" y="60" width="360" height="660" rx="12" fill="#eefaf0" stroke="#2f9a4a" stroke-width="2"/>
+<text x="1000" y="92" font-size="22" font-weight="bold" fill="#1f7a36">Shared by both (unchanged)</text>
+<rect x="845" y="110" width="310" height="140" rx="10" fill="#fff" stroke="#e08a1e" stroke-width="2"/>
+<text x="1000" y="150" font-weight="bold" font-size="21">1. Cloudflare</text>
+<text x="1000" y="182">WAF + Access</text><text x="1000" y="210">tunnel connects outward only</text>
+<rect x="845" y="300" width="310" height="100" rx="10" fill="#fff" stroke="#2f9a4a" stroke-width="2"/>
+<text x="1000" y="340" font-weight="bold" font-size="21">2. Containerized bridge</text>
+<text x="1000" y="372">streams the answer back</text>
+<rect x="845" y="450" width="310" height="100" rx="10" fill="#fff" stroke="#2f9a4a" stroke-width="2"/>
+<text x="1000" y="490" font-weight="bold" font-size="21">3. Model routing</text>
+<text x="1000" y="522">local Ollama first, hosted if needed</text>
+<rect x="845" y="600" width="310" height="100" rx="10" fill="#fff" stroke="#2f9a4a" stroke-width="2"/>
+<text x="1000" y="640" font-weight="bold" font-size="21">4. Tools and actions</text>
+<text x="1000" y="672">in a sandbox</text>
+</g>
+<!-- forward arrows -->
+<line x1="740" y1="160" x2="840" y2="160" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+<polyline points="740,400 785,400 785,215 840,215" fill="none" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+<line x1="1000" y1="250" x2="1000" y2="295" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+<line x1="1000" y1="400" x2="1000" y2="445" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+<line x1="1000" y1="550" x2="1000" y2="595" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+<!-- return path -->
+<polyline points="845,370 805,370 805,540 25,540 25,170 65,170" fill="none" stroke="#1f7a36" stroke-width="4" stroke-dasharray="10 6" marker-end="url(#r)"/>
+<polyline points="25,400 65,400" fill="none" stroke="#1f7a36" stroke-width="4" stroke-dasharray="10 6" marker-end="url(#r)"/>
+<text x="415" y="572" text-anchor="middle" font-size="19" fill="#1f7a36" font-weight="bold">Answer streams back to the glasses' display and speaker</text>
+<text x="415" y="625" text-anchor="middle" font-size="18" fill="#444">Black arrows: my request.  Green dashed: the answer.</text>
+<text x="415" y="655" text-anchor="middle" font-size="18" fill="#8a6a00">Gold boxes: the only part that changes.</text>
+<text x="415" y="685" text-anchor="middle" font-size="18" fill="#444">Guardrails apply along the whole path.</text>
+</svg>

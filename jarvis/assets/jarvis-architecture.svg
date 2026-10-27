@@ -23,7 +23,7 @@
 <!-- STT -->
 <rect x="310" y="110" width="210" height="110" rx="10" fill="#fff" stroke="#e08a1e" stroke-width="2"/>
 <text x="415" y="136" text-anchor="middle" font-size="16" font-weight="bold">Speech-to-text</text>
-<text x="415" y="160" text-anchor="middle" font-size="13">Today: Rokid cloud ASR</text>
+<text x="415" y="160" text-anchor="middle" font-size="13">Rokid platform</text>
 <text x="415" y="180" text-anchor="middle" font-size="13">+ custom-agent callback</text>
 <text x="415" y="204" text-anchor="middle" font-size="12" fill="#7a3db8">swappable stage</text>
 <!-- Cloudflare -->
@@ -92,9 +92,9 @@
 <rect x="20" y="640" width="560" height="120" rx="12" fill="#fffbe6" stroke="#c9a400" stroke-width="2"/>
 <text x="300" y="666" text-anchor="middle" font-size="16" font-weight="bold">Evaluation loop: accuracy &amp; speed</text>
 <text x="40" y="692" font-size="13">• Weekly sweep: same tests across hosted + local models; flags drift</text>
-<text x="40" y="714" font-size="13">• Speech-to-text: real-world voice from the glasses; Rokid cloud ASR</text>
+<text x="40" y="714" font-size="13">• Speech-to-text: real-world voice from the glasses; Rokid platform</text>
 <text x="52" y="734" font-size="13">vs. local whisper.cpp is a candidate comparison</text>
-<text x="40" y="754" font-size="13">• Results feed back into which model / STT stage gets used</text>
+<text x="40" y="754" font-size="13">• Results feed back into which model gets used</text>
 <rect x="620" y="640" width="560" height="120" rx="12" fill="#f3f3f3" stroke="#555" stroke-width="2"/>
 <text x="900" y="666" text-anchor="middle" font-size="16" font-weight="bold">GitHub: where code and docs live</text>
 <text x="640" y="692" font-size="13">• Bridge code, runbooks, design and decision records</text>
