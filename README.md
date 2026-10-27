@@ -43,7 +43,7 @@ This repository is meant to use the same gate it describes. The CI checks (a Def
 
 The full write-up, including architecture, a case study on a shared control plane for rate-limited APIs, and lessons learned, is in [docs/overview.md](docs/overview.md).
 
-For a personal-assistant case study, see [Jarvis](jarvis/README.md): a personal assistant that works alongside a second agent, and each checks the other.
+For a personal-assistant case study, see [Jarvis](jarvis/README.md): a personal AI built around smart glasses and used to test guardrails.
 
 ## Repository layout
 

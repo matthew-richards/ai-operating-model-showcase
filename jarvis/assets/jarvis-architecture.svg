@@ -1,19 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" font-family="Helvetica,Arial,sans-serif" font-size="15">
-<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 z" fill="#444"/></marker></defs>
-<rect width="760" height="300" fill="#fbfaf7"/>
-<text x="380" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">Jarvis, conceptually</text>
-<rect x="30" y="110" width="150" height="70" rx="12" fill="#fde8e8" stroke="#b55"/>
-<text x="105" y="140" text-anchor="middle" font-weight="bold">You</text><text x="105" y="160" text-anchor="middle" font-size="12" fill="#555">ask, approve</text>
-<rect x="300" y="60" width="160" height="70" rx="12" fill="#e8eef7" stroke="#4a6fa5"/>
-<text x="380" y="90" text-anchor="middle" font-weight="bold">Jarvis</text><text x="380" y="110" text-anchor="middle" font-size="12" fill="#555">assistant + reviewer</text>
-<rect x="300" y="200" width="160" height="70" rx="12" fill="#f3e8f7" stroke="#8a5aa5"/>
-<text x="380" y="230" text-anchor="middle" font-weight="bold">Execution agent</text><text x="380" y="250" text-anchor="middle" font-size="12" fill="#555">does the work</text>
-<rect x="580" y="60" width="150" height="70" rx="12" fill="#eef5ec" stroke="#5a8f4e"/>
-<text x="655" y="90" text-anchor="middle" font-weight="bold">Smart glasses</text><text x="655" y="110" text-anchor="middle" font-size="12" fill="#555">eyes and ears (planned)</text>
-<g stroke="#444" stroke-width="1.6" fill="none" marker-end="url(#a)">
-<line x1="180" y1="135" x2="298" y2="100"/><line x1="180" y1="155" x2="298" y2="230"/>
-<line x1="580" y1="95" x2="462" y2="95"/>
-<line x1="360" y1="130" x2="360" y2="198"/><line x1="400" y1="200" x2="400" y2="132"/>
-</g>
-<text x="410" y="170" font-size="12" fill="#555">check each other's work</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="460" viewBox="0 0 700 460" font-family="Helvetica,Arial,sans-serif" font-size="15">
+<rect width="700" height="460" fill="#fbfaf7"/>
+<text x="350" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">Jarvis: a personal AI inside guardrails</text>
+<rect x="60" y="55" width="580" height="385" rx="40" fill="#fff4e0" stroke="#c48a2c" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="350" y="82" text-anchor="middle" font-weight="bold" fill="#8a5f1a">Guardrails</text>
+<text x="350" y="102" text-anchor="middle" font-size="12" fill="#8a5f1a">spending limits · sandboxing · recovery · agents stay in their roles</text>
+<rect x="245" y="130" width="210" height="80" rx="14" fill="#e8eef7" stroke="#4a6fa5" stroke-width="2"/>
+<text x="350" y="165" text-anchor="middle" font-weight="bold" font-size="17">Jarvis</text>
+<text x="350" y="187" text-anchor="middle" font-size="12" fill="#555">personal AI assistant</text>
+<circle cx="350" cy="320" r="78" fill="#fde8e8" stroke="#b55" stroke-width="2"/>
+<text x="350" y="312" text-anchor="middle" font-weight="bold" font-size="17">Matthew</text>
+<text x="350" y="334" text-anchor="middle" font-size="13" fill="#555">wearing the glasses</text>
+<text x="350" y="352" text-anchor="middle" font-size="12" fill="#555">wherever he goes</text>
+<line x1="350" y1="212" x2="350" y2="240" stroke="#444" stroke-width="2"/>
+<text x="362" y="232" font-size="12" fill="#555">voice + camera</text>
 </svg>
