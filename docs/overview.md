@@ -1,6 +1,8 @@
 # AI Operating Model: governing AI agents with security controls as code
 
-![Control plane](../diagrams/01-control-plane.png)
+![Control plane: AI agents act through a version-controlled governed layer, and consequential actions wait for the human owner's approval](../diagrams/01-control-plane.png)
+
+*The control plane: agents act through a governed layer, and anything consequential routes back to me.*
 
 ## Problem
 
@@ -8,7 +10,7 @@ AI assistants are powerful but forget everything between sessions. Left ungovern
 
 ## Approach
 
-I built a personal "operating model": a version-controlled layer of process docs, reusable skills, and state records. Agents read it for context and must follow it when they act. Chat is just the interface, and the durable truth lives in reviewable files.
+I built a personal "operating model": a version-controlled layer of process docs, reusable skills, and state records. Agents read it for context and must follow it when they act. Chat is only the interface. The record lives in reviewable files.
 
 ## Governing multiple AI agents
 
@@ -19,9 +21,9 @@ I run multiple autonomous AI agents that work in the same repositories and on th
 - **Shared hard rules.** Every agent loads the same rules card on every run, so their policy can't drift apart.
 - **Evidence, not chat.** A handoff is a link to a pull request or issue. A chat message doesn't count as proof that work was done.
 
-**Incident ledger.** When an agent breaks a rule, the deviation is written up as an incident covering what happened, why, and what changed. Each incident feeds back into the rules. In one week, a core rule was amended three times as real incidents exposed gaps. Every agent logs its own deviations, including the agent that drafted the rules.
+**Incident ledger.** When an agent breaks a rule, the deviation is written up as an incident covering what happened, why, and what changed. Each incident feeds back into the rules. Real incidents have exposed gaps, and core rules have been amended because of them. An agent logs its own deviations, even against rules it drafted.
 
-**Status.** These rules are written policy that the agents follow, plus a ledger reviewed by me. They are not yet technically enforced, so an agent could still break one. That gap is tracked as future work.
+**Status.** These rules are written policy, plus a ledger I review. They are not yet technically enforced, so an agent could still break one. That gap is tracked as future work.
 
 ## Human approval gates
 
@@ -30,7 +32,7 @@ Agents work on their own when the work is routine and reversible. Anything with 
 - **What needs approval.** Sending a message or email, deleting anything, spending money, publishing something publicly, and changing a calendar based on something an agent read in email.
 - **What doesn't.** Drafting, researching, opening a pull request, and other work that can be reviewed or undone.
 - **Drafts, not sends.** Outgoing messages are prepared as drafts I review and send myself. A request to "handle it" is never permission to send.
-- **Visible waits.** Work that needs my decision gets a human-in-the-loop label on the board, so a pending approval shows up as a wait instead of stalling silently.
+- **Visible waits.** Work that needs my decision gets a human-in-the-loop label on the board, so a pending approval is visible instead of silently stalling.
 - **Refusals are final.** If I decline or don't answer, the agent doesn't retry or find another route to the same action.
 
 **Status.** Send and approval prompts for outgoing messages are enforced by the agent platform. Approval before deleting, spending money, publishing, and changing a calendar from email is written policy that the agents follow.
@@ -39,7 +41,7 @@ Agents work on their own when the work is routine and reversible. Anything with 
 
 I can't govern what I can't see, so agent activity is meant to be visible and traceable after the fact.
 
-- **Visible commands.** Agents are required to show every command in a visible terminal before it runs and to log it with a timestamp. Hidden background commands are not allowed by policy.
+- **Visible commands.** Policy requires agents to show every command in a visible terminal before it runs and log it with a timestamp. Hidden background commands are not allowed.
 - **Traced model calls.** Model calls routed through OpenRouter are traced in Opik, an open-source LLM tracing tool, so the data can be used to compare models, catch quality drift, and keep spending in check.
 - **Review, not trust.** When something goes wrong, the logs and traces are the evidence behind the incident ledger, not an agent's own account of what it did.
 
@@ -52,7 +54,9 @@ I can't govern what I can't see, so agent activity is meant to be visible and tr
 - **Backup before mutation.** A restore path is recorded before any code or config change.
 - **Blocker taxonomy.** Every wait is classified (human, vendor, or external), so stalled work stays visible instead of silently rotting.
 
-![Change gate](../diagrams/02-change-gate.png)
+![Change gate: every change goes through a pull request, the Definition of Done, gitleaks, and Markdown lint checks, and a no-bypass ruleset before it reaches main](../diagrams/02-change-gate.png)
+
+*One path to main, with no bypass.*
 
 ## Case study: a rate-limited API collector
 
@@ -61,18 +65,18 @@ One of my projects collects data from a vendor API with strict rate limits. Goin
 - **One control plane, many adapters.** A shared gate tracks rolling-window budgets for each rate-limited API through a small interface: acquire before a call, record the result, report a snapshot, and back off. GitHub has a full gate of its own, and the collector plugs in through an adapter that wraps its existing limiter instead of rewriting it.
 - **Check before bulk calls.** Agents read the shared snapshot before a large batch of calls instead of finding the limit by hitting it.
 - **One pattern, not many.** A new API gets a new adapter in the same place, not a parallel mechanism.
-- **Visible budgets.** A combined snapshot feeds a daily digest, so quota use is reviewed like any other operating metric.
+- **Visible budgets.** A combined snapshot feeds a regular digest, so quota use is reviewed like any other operating metric.
 
-**Lesson.** Rate limits are a shared resource. Treating them as a control plane, rather than leaving each script to handle its own, keeps every agent inside the same budget.
+**Lesson.** Rate limits are a shared resource. Treating them as a control plane, instead of leaving each script to handle its own, keeps every agent inside the same budget.
 
 ## Security by design
 
 - **One secrets store.** Credentials are injected at runtime from a secrets manager. Nothing is committed, and CI does not keep a second copy.
 - **Least-privilege CI.** Pipeline jobs get a read-only token. Cloud access is off by default, and short-lived federated credentials are the only allowed pattern.
-- **Controls are enforced, not suggested.** Every change must include a Definition-of-Done checklist. CI verifies the checklist is present and fully ticked; items are self-attested. A repository ruleset blocks force-pushes and branch deletion and allows no bypass, not even for me. Requiring the CI checks before merge is pending for this public repository.
+- **Controls are enforced, not suggested.** Every change includes a Definition of Done checklist. CI checks that the list is present and fully ticked. Items are self-attested. A repository ruleset blocks force-push and branch deletion and allows no bypass, not even for me. The ruleset requires the Definition of Done, gitleaks secrets scan, and Markdown lint checks before merge.
 - **Sensitive operational state** (quota counters, local data) is excluded from version control by policy.
 
 ## Lessons
 
 - A control that can be skipped will be skipped, by agents and by people. Make the check mandatory.
-- Keep the system of record for knowledge separate from the one for executable process, or both decay.
+- Keep knowledge and executable process in separate systems of record, or both decay.

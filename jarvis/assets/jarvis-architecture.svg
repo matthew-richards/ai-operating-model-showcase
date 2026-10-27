@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" font-family="Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
 <defs>
 <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#333"/></marker>
 <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#7a3db8"/></marker>
 </defs>
-<rect width="1200" height="860" fill="#fff"/>
+<rect width="1200" height="860" rx="24" fill="#fff"/>
 <text x="600" y="34" text-anchor="middle" font-size="24" font-weight="bold" fill="#222">How Jarvis works: one voice turn</text>
 <!-- zones -->
 <rect x="20" y="60" width="250" height="560" rx="12" fill="#eef5ff" stroke="#4a7bd0" stroke-dasharray="6 4"/>

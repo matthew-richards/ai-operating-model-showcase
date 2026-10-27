@@ -8,6 +8,6 @@ If you find something here that looks sensitive, such as a credential, hostname,
 
 ## Controls on this repository
 
-- The main branch blocks force-push and deletion and allows no bypass.
+- The main branch ruleset blocks force-push and deletion, with no bypass.
 - GitHub secret scanning and push protection are on.
-- CI checks (Definition of Done, gitleaks secrets scan, Markdown lint) are pending and not running yet.
+- CI checks (Definition of Done, gitleaks secrets scan, Markdown lint) run on every pull request and are required before merge. A Vale prose check runs as advice only.

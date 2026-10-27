@@ -3,7 +3,7 @@
     <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
     <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B45309"/></marker>
   </defs>
-  <rect width="1200" height="620" fill="#FFFFFF"/>
+  <rect width="1200" height="620" rx="24" fill="#FFFFFF"/>
   <text x="48" y="58" font-size="26" font-weight="700" fill="#0F172A">Control plane</text>
   <text x="48" y="86" font-size="15" fill="#64748B">Agents act through a governed layer. Consequential actions route back to the human owner.</text>
   <!-- governed zone -->

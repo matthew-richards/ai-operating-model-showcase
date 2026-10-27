@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="600" viewBox="0 0 840 600" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker>
+  </defs>
+  <rect width="840" height="600" rx="24" fill="#FFFFFF"/>
+  <text x="40" y="58" font-size="30" font-weight="700" fill="#0F172A">How Jarvis works</text>
+  <text x="40" y="92" font-size="20" fill="#64748B">One voice turn, simplified</text>
+  <!-- row 1 -->
+  <rect x="40" y="130" width="220" height="130" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+  <text x="150" y="180" font-size="24" font-weight="700" fill="#0F172A" text-anchor="middle">Rokid Glasses</text>
+  <text x="150" y="214" font-size="19" fill="#475569" text-anchor="middle">I speak</text>
+  <rect x="310" y="130" width="220" height="130" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+  <text x="420" y="180" font-size="24" font-weight="700" fill="#0F172A" text-anchor="middle">Rokid platform</text>
+  <text x="420" y="214" font-size="19" fill="#475569" text-anchor="middle">speech to text</text>
+  <rect x="580" y="130" width="220" height="130" rx="14" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+  <text x="690" y="180" font-size="24" font-weight="700" fill="#064E3B" text-anchor="middle">Cloudflare</text>
+  <text x="690" y="212" font-size="19" fill="#065F46" text-anchor="middle">firewall, Access,</text>
+  <text x="690" y="238" font-size="19" fill="#065F46" text-anchor="middle">tunnel home</text>
+  <!-- row 2 -->
+  <rect x="580" y="330" width="220" height="130" rx="14" fill="#0F2A44"/>
+  <text x="690" y="380" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">Jarvis bridge</text>
+  <text x="690" y="412" font-size="19" fill="#CBD5E1" text-anchor="middle">container,</text>
+  <text x="690" y="438" font-size="19" fill="#CBD5E1" text-anchor="middle">own auth check</text>
+  <rect x="310" y="330" width="220" height="130" rx="14" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+  <text x="420" y="380" font-size="24" font-weight="700" fill="#0F172A" text-anchor="middle">Models</text>
+  <text x="420" y="412" font-size="19" fill="#475569" text-anchor="middle">local GPU first,</text>
+  <text x="420" y="438" font-size="19" fill="#475569" text-anchor="middle">cloud when needed</text>
+  <!-- request path -->
+  <path d="M260,195 H302" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M530,195 H572" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M690,260 V322" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M580,382 H538" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M530,410 H572" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <!-- answer path -->
+  <path d="M690,460 V515 H150 V268" stroke="#047857" stroke-width="3" stroke-dasharray="8 6" fill="none" marker-end="url(#g)"/>
+  <text x="420" y="545" font-size="19" fill="#047857" text-anchor="middle">answer streams back through Cloudflare</text>
+  <text x="420" y="570" font-size="19" fill="#047857" text-anchor="middle">to the display and speaker</text>
+</svg>
