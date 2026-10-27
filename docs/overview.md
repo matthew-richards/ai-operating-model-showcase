@@ -1,8 +1,8 @@
 # AI Operating Model: governing AI agents with security controls as code
 
-![Control plane: AI agents act through a version-controlled governed layer with secrets injected at runtime, API budget gates, and an operating model; work flows both ways with GitHub (PRs and card updates in; rules, checks, and approvals out), the knowledge base (writes and reads), and rate-limited APIs (requests within budget out; responses and rate-limit headers back); consequential actions wait for the human owner's approval](../diagrams/01-control-plane.png)
+![Control plane: AI agents run inside an agent sandbox (OpenShell) that confines files, processes, and system calls, with an API rate limit in the sandbox. Every network call leaves through the OpenShell supervisor, which checks policy and swaps in the real credential from the OpenShell provider store, fed at runtime by the secrets manager. Tool calls go to the MCP gateway, which checks tools, arguments, and caller, logs each call, and fronts one MCP servers group (for example GitHub, AI Operating Model, knowledge base). Model calls go to model providers (OpenRouter, Ollama). The Internet edge enforces limits outside the sandbox. The GitHub gate is the human gate: the owner approves PRs and merges. Opik traces model calls](../diagrams/01-control-plane.png)
 
-*The control plane: agents act through a governed layer, and anything consequential routes back to me.*
+*The control plane: OpenShell is the outer boundary, every tool call goes through the MCP gateway, and anything consequential routes back to me.*
 
 ## Problem
 
@@ -71,7 +71,16 @@ One of my projects collects data from a vendor API with strict rate limits. Goin
 
 ## Security by design
 
-- **One secrets store.** Credentials are injected at runtime from a secrets manager. Nothing is committed, and CI does not keep a second copy.
+- **Two layers for tool use.** They are separate controls with separate permission models. Both are tested, and now rolling out more widely.
+  - **Agent sandbox ([OpenShell](https://github.com/NVIDIA/OpenShell)), the outer boundary.** The agents run inside it. It confines files, processes, and system calls, and every network call leaves through its supervisor. Rule changes wait for my approval.
+  - **MCP gateway, the chokepoint for tool calls.** It sits outside the sandbox. It decides which tools an agent can call, with what arguments, and as which caller, and it logs each call. It fronts one group of MCP servers, such as GitHub, the AI Operating Model, and the knowledge base.
+  - **Credentials stay out of the agent.** The real credential sits in OpenShell's provider store, and the supervisor swaps it in only for an approved destination.
+  - **Rate limits on both sides.** API rate limiting runs in the sandbox. The Internet edge enforces limits outside it.
+  - **Human gate.** I approve PRs and merges at the GitHub gate. Agents reach it through the pipeline, not through MCP.
+  - **Known limits.** Responses aren't filtered yet, so I use only MCP servers I trust, each with its own least-privilege token. See [OpenShell's architecture](https://docs.nvidia.com/openshell/latest/about/architecture).
+  - **Why both.** The gateway limits what an agent can ask for. The sandbox limits what it can touch if it ignores that or gets prompt-injected.
+- **Observability.** Opik traces model calls from OpenRouter, Ollama, and local resources.
+- **One secrets store.** Credentials are injected at runtime from a secrets manager, to the sandbox's provider store only. Nothing is committed, and CI does not keep a second copy.
 - **Least-privilege CI.** Pipeline jobs get a read-only token. Cloud access is off by default, and short-lived federated credentials are the only allowed pattern.
 - **Controls are enforced, not suggested.** Every change includes a Definition of Done checklist. GitHub Actions checks that the list is present and fully ticked. Items are self-attested. A GitHub ruleset blocks force-push and branch deletion and allows no bypass, not even for me. The ruleset requires the Definition of Done, gitleaks secrets scan, and Markdown lint checks before merge.
 - **Sensitive operational state** (quota counters, local data) is excluded from version control by policy.

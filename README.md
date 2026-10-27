@@ -10,9 +10,11 @@ A working pattern for running AI agents under enterprise security controls.
 - **Approval gates and enforced controls.** What runs on its own, what waits for a human, and which controls a machine actually enforces.
 - **Jarvis.** A personal AI on Rokid Glasses that I use as a real-world lab for guardrails and model testing.
 
-![Control plane: AI agents act through a version-controlled governed layer with secrets injected at runtime, API budget gates, and an operating model; work flows both ways with GitHub (PRs and card updates in; rules, checks, and approvals out), the knowledge base (writes and reads), and rate-limited APIs (requests within budget out; responses and rate-limit headers back); consequential actions wait for the human owner's approval](diagrams/01-control-plane.png)
+![Control plane: AI agents run inside an agent sandbox (OpenShell) that confines files, processes, and system calls, with an API rate limit in the sandbox. Every network call leaves through the OpenShell supervisor, which checks policy and swaps in the real credential from the OpenShell provider store, fed at runtime by the secrets manager. Tool calls go to the MCP gateway, which checks tools, arguments, and caller, logs each call, and fronts one MCP servers group (for example GitHub, AI Operating Model, knowledge base). Model calls go to model providers (OpenRouter, Ollama). The Internet edge enforces limits outside the sandbox. The GitHub gate is the human gate: the owner approves PRs and merges. Opik traces model calls](diagrams/01-control-plane.png)
 
-*The control plane: agents act through a governed layer, and anything consequential routes back to me for approval.*
+*The control plane: OpenShell is the outer boundary, every tool call goes through the MCP gateway, and anything consequential routes back to me for approval.*
+
+Two separate layers, on purpose. [OpenShell](https://github.com/NVIDIA/OpenShell) is the outer boundary. The agents run inside its sandbox, and every network call leaves through its supervisor, which checks policy and swaps in the real credential. The MCP gateway sits outside the sandbox and checks every tool call: which tools, which arguments, and which caller, with every call logged. It fronts one group of MCP servers, such as GitHub, the AI Operating Model, and the knowledge base. API rate limiting runs in the sandbox, and the Internet edge enforces limits outside it. PRs and merges reach me through the pipeline at the GitHub gate, not through MCP. Both layers are tested, and now rolling out more widely. Opik traces model calls from OpenRouter, Ollama, and local resources.
 
 ### At a glance
 

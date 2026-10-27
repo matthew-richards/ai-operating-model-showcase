@@ -47,7 +47,9 @@ For a step-by-step walkthrough, see [How Jarvis works](how-jarvis-works.md).
 Jarvis lets me test guardrails, configurations, and prompts against real use, find weak spots, and fix them.
 
 - **At the edge:** Cloudflare filters and authenticates traffic before it reaches home, and the app checks credentials again on its own.
-- **Around actions:** I evaluated a container-based sandbox for tools and actions. I test how well it enforces its rules: outbound traffic blocked by default, per-program network rules, filesystem lockdown, and a full audit trail. Fast startup matters, since a voice reply has to land in seconds.
+- **Around tool calls:** Every tool call goes through an MCP gateway outside the sandbox. It checks which tool, which arguments, and which caller, and logs each call. It's tested, and now rolling out more widely.
+- **Around actions:** [OpenShell](https://github.com/NVIDIA/OpenShell) is the outer boundary, tested and now rolling out more widely. Jarvis runs inside its sandbox, and every network call leaves through its supervisor. Jarvis holds only a placeholder credential. The supervisor swaps in the real one for approved destinations. Responses aren't filtered yet, so Jarvis uses only trusted MCP servers, each with its own scoped token.
+- **Around visibility:** Opik traces model calls from OpenRouter, Ollama, and local resources.
 - **Around spending:** Cloud model use has a hard spending cap, and heavy jobs check the remaining budget before they run.
 - **Around uptime:** After an outage, Jarvis got a watchdog that runs outside the system it watches. It only acts after repeated failed checks, and it waits between restarts so it can't loop.
 - **Around its role:** When Jarvis once went beyond its agreed role, it wrote a blameless report on itself, and the lesson became a written rule.
@@ -60,7 +62,7 @@ As Jarvis grows from answering questions to taking real actions, the guardrails 
 - **Risk levels.** Each action is classified by risk, and riskier actions get stricter handling.
 - **Approval routing.** Higher-risk actions wait for my approval before they run.
 - **Rollback.** Actions are designed so they can be undone when something goes wrong.
-- **Sandboxed tool runner.** Tools that take real actions run in their own contained sandbox, separate from the voice bridge.
+- **Sandboxed tool runner.** Tools that take real actions run in their own contained sandbox, separate from the voice bridge, and reach tools only through the gateway.
 - **Swappable sandbox.** A thin adapter keeps the sandbox replaceable, and its policies stay as portable files.
 - **No self-approval.** Jarvis never approves changes to its own rules. It can propose a change, and I decide.
 
