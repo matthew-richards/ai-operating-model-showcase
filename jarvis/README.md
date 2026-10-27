@@ -13,14 +13,13 @@ I'm building it around [Rokid Glasses](https://store.rokid.com/products/rokid-gl
 Jarvis is a real system I use every day, which makes it a good place to test guardrails, architecture ideas, and AI models on something that matters, not on a demo. The guardrails I'm trying out include:
 
 - **Spending limits.** Cloud model use has a hard cap, so a runaway job can't run up a bill.
-- **Sandboxing.** Before trusting an agent with real actions, I tested a sandbox to confirm it blocks what it should.
+- **Sandboxing.** Before trusting Jarvis with real actions, I tested a sandbox to confirm it blocks what it should.
 - **Recovery.** After an outage, Jarvis got a separate watchdog that brings it back if it goes down. A watcher has to live outside the thing it watches.
 - **Staying in role.** When Jarvis once stepped outside its agreed role, it wrote a blameless report on itself, and the lesson became a rule.
-- **A second set of eyes.** One experiment pairs Jarvis with a second agent so neither signs off on its own work.
 
 ## Experimenting with architecture
 
-Jarvis is also a living lab. I use it to try out different ways of structuring a personal AI: which parts run locally and which in the cloud, how agents split up work, and how corrections turn into lasting rules. Some experiments stick and some get dropped. Either way, I learn from a system I actually depend on.
+Jarvis is also a living lab. I use it to try out different ways of structuring a personal AI: which parts run locally and which in the cloud, which tasks it should handle, and how corrections turn into lasting rules. Some experiments stick and some get dropped. Either way, I learn from a system I actually depend on.
 
 ## Testing AI models
 
