@@ -18,26 +18,26 @@
   <text x="470" y="308" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">AI agents</text>
   <text x="470" y="332" font-size="13" fill="#475569" text-anchor="middle">via chat interface</text>
   <!-- operating model -->
-  <rect x="650" y="170" width="200" height="100" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
-  <text x="750" y="206" font-size="17" font-weight="700" fill="#064E3B" text-anchor="middle">Operating model</text>
-  <text x="750" y="230" font-size="13" fill="#065F46" text-anchor="middle">skills, process docs,</text>
-  <text x="750" y="248" font-size="13" fill="#065F46" text-anchor="middle">state records</text>
-  <!-- budget gates -->
   <rect x="650" y="360" width="200" height="100" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
-  <text x="750" y="396" font-size="17" font-weight="700" fill="#064E3B" text-anchor="middle">API budget gates</text>
-  <text x="750" y="420" font-size="13" fill="#065F46" text-anchor="middle">rolling window</text>
-  <text x="750" y="438" font-size="13" fill="#065F46" text-anchor="middle">per API</text>
+  <text x="750" y="396" font-size="17" font-weight="700" fill="#064E3B" text-anchor="middle">Operating model</text>
+  <text x="750" y="420" font-size="13" fill="#065F46" text-anchor="middle">skills, process docs,</text>
+  <text x="750" y="438" font-size="13" fill="#065F46" text-anchor="middle">state records</text>
+  <!-- budget gates -->
+  <rect x="650" y="170" width="200" height="100" rx="10" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+  <text x="750" y="206" font-size="17" font-weight="700" fill="#064E3B" text-anchor="middle">API budget gates</text>
+  <text x="750" y="230" font-size="13" fill="#065F46" text-anchor="middle">rolling window</text>
+  <text x="750" y="248" font-size="13" fill="#065F46" text-anchor="middle">per API</text>
   <!-- human gate -->
   <rect x="370" y="440" width="200" height="90" rx="10" fill="#FFFBEB" stroke="#B45309" stroke-width="1.5"/>
   <text x="470" y="478" font-size="17" font-weight="700" fill="#78350F" text-anchor="middle">Human gate</text>
   <text x="470" y="502" font-size="13" fill="#92400E" text-anchor="middle">consequential actions</text>
   <!-- externals -->
-  <rect x="950" y="170" width="200" height="100" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
-  <text x="1050" y="214" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Knowledge base</text>
-  <text x="1050" y="238" font-size="13" fill="#64748B" text-anchor="middle">read and write</text>
   <rect x="950" y="360" width="200" height="100" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
-  <text x="1050" y="396" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Rate-limited</text>
-  <text x="1050" y="420" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">external APIs</text>
+  <text x="1050" y="404" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Knowledge base</text>
+  <text x="1050" y="428" font-size="13" fill="#64748B" text-anchor="middle">read and write</text>
+  <rect x="950" y="170" width="200" height="100" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="1050" y="206" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">Rate-limited</text>
+  <text x="1050" y="230" font-size="17" font-weight="700" fill="#0F172A" text-anchor="middle">external APIs</text>
   <rect x="370" y="160" width="200" height="70" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
   <text x="470" y="192" font-size="16" font-weight="700" fill="#0F172A" text-anchor="middle">Secrets manager</text>
   <text x="470" y="213" font-size="12" fill="#64748B" text-anchor="middle">injected at runtime only</text>
@@ -46,10 +46,10 @@
   <path d="M470,230 V262" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#a)"/>
   <path d="M570,300 C610,300 610,220 642,220" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
   <path d="M570,330 C610,330 610,410 642,410" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M850,212 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M942,228 H858" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M850,410 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M700,270 C700,330 620,470 578,478" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#g)"/>
+  <path d="M850,402 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M942,418 H858" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M850,220 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M750,460 V485 H578" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#g)"/>
   <path d="M370,485 C300,485 148,470 148,368" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#g)"/>
   <text x="260" y="470" font-size="12" fill="#92400E">waits for approval</text>
 </svg>
