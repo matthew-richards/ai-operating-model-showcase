@@ -10,7 +10,7 @@ A working pattern for running AI agents under enterprise security controls.
 - **Approval gates and enforced controls.** What runs on its own, what waits for a human, and which controls a machine actually enforces.
 - **Jarvis.** A personal AI on Rokid Glasses that I use as a real-world lab for guardrails and model testing.
 
-![Control plane: AI agents act through a version-controlled governed layer with secrets injected at runtime, API budget gates, and an operating model whose rules and required checks live in GitHub, and consequential actions wait for the human owner's approval](diagrams/01-control-plane.png)
+![Control plane: AI agents act through a version-controlled governed layer with secrets injected at runtime, API budget gates, and an operating model; work flows both ways with GitHub (PRs and card updates in; rules, checks, and approvals out), the knowledge base (writes and reads), and rate-limited APIs (requests within budget out; responses and rate-limit headers back); consequential actions wait for the human owner's approval](diagrams/01-control-plane.png)
 
 *The control plane: agents act through a governed layer, and anything consequential routes back to me for approval.*
 

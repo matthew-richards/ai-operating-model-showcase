@@ -1,6 +1,6 @@
 # AI Operating Model: governing AI agents with security controls as code
 
-![Control plane: AI agents act through a version-controlled governed layer held in GitHub, and consequential actions wait for the human owner's approval](../diagrams/01-control-plane.png)
+![Control plane: AI agents act through a version-controlled governed layer with two-way flows to GitHub, the knowledge base, and rate-limited APIs, and consequential actions wait for the human owner's approval](../diagrams/01-control-plane.png)
 
 *The control plane: agents act through a governed layer, and anything consequential routes back to me.*
 

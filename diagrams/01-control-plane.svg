@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
     <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B45309"/></marker>
+    <marker id="gr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker>
   </defs>
-  <rect width="1200" height="620" rx="24" fill="#FFFFFF"/>
+  <rect width="1200" height="640" rx="24" fill="#FFFFFF"/>
   <text x="48" y="58" font-size="26" font-weight="700" fill="#0F172A">Control plane</text>
   <text x="48" y="86" font-size="15" fill="#64748B">Agents act through a governed layer. Consequential actions route back to the human owner.</text>
   <!-- governed zone -->
@@ -46,17 +47,30 @@
   <path d="M470,230 V262" stroke="#94A3B8" stroke-width="2" stroke-dasharray="5 4" fill="none" marker-end="url(#a)"/>
   <path d="M570,300 C610,300 610,220 642,220" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
   <path d="M570,330 C610,330 610,410 642,410" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M850,402 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M942,418 H858" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <path d="M850,220 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <path d="M850,400 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="900" y="377" font-size="11" fill="#334155" text-anchor="middle">writes: decisions,</text>
+  <text x="900" y="391" font-size="11" fill="#334155" text-anchor="middle">notes, state</text>
+  <path d="M950,422 H858" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#gr)"/>
+  <text x="900" y="438" font-size="11" fill="#047857" text-anchor="middle">reads: context,</text>
+  <text x="900" y="452" font-size="11" fill="#047857" text-anchor="middle">prior decisions</text>
+  <path d="M850,205 H942" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="900" y="182" font-size="11" fill="#334155" text-anchor="middle">requests</text>
+  <text x="900" y="196" font-size="11" fill="#334155" text-anchor="middle">(within budget)</text>
+  <path d="M950,240 H858" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#gr)"/>
+  <text x="900" y="256" font-size="11" fill="#047857" text-anchor="middle">responses +</text>
+  <text x="900" y="270" font-size="11" fill="#047857" text-anchor="middle">rate-limit headers</text>
   <path d="M750,460 V485 H578" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#g)"/>
   <path d="M370,485 C300,485 148,470 148,368" stroke="#B45309" stroke-width="2" fill="none" marker-end="url(#g)"/>
   <text x="260" y="470" font-size="12" fill="#92400E">waits for approval</text>
   <!-- github -->
-  <rect x="950" y="490" width="200" height="90" rx="10" fill="#0F2A44"/>
-  <text x="1050" y="524" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">GitHub</text>
-  <text x="1050" y="548" font-size="13" fill="#CBD5E1" text-anchor="middle">board, repos,</text>
-  <text x="1050" y="566" font-size="13" fill="#CBD5E1" text-anchor="middle">required checks</text>
-  <path d="M950,535 H820 V468" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-  <text x="885" y="525" font-size="12" fill="#475569" text-anchor="middle">holds rules + checks</text>
+  <rect x="950" y="495" width="200" height="100" rx="10" fill="#0F2A44"/>
+  <text x="1050" y="532" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="middle">GitHub</text>
+  <text x="1050" y="556" font-size="13" fill="#CBD5E1" text-anchor="middle">board, repos,</text>
+  <text x="1050" y="574" font-size="13" fill="#CBD5E1" text-anchor="middle">required checks</text>
+  <path d="M950,530 H825 V468" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="888" y="506" font-size="12" fill="#334155" text-anchor="middle">out: rules, checks,</text>
+  <text x="888" y="521" font-size="12" fill="#334155" text-anchor="middle">approvals</text>
+  <path d="M795,468 V565 H942" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#gr)"/>
+  <text x="870" y="584" font-size="12" fill="#047857" text-anchor="middle">in: PRs, card updates,</text>
+  <text x="870" y="599" font-size="12" fill="#047857" text-anchor="middle">doc commits</text>
 </svg>
