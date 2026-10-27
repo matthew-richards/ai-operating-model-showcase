@@ -1,0 +1,28 @@
+name: dod
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  dod:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require a completed Definition of Done checklist
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          if ! printf '%s' "${PR_BODY:-}" | grep -q '^## Definition of Done'; then
+            echo "::error::PR body is missing the '## Definition of Done' section."
+            exit 1
+          fi
+          if printf '%s' "${PR_BODY}" | grep -q '^- \[ \]'; then
+            echo "::error::Definition of Done has unchecked items."
+            exit 1
+          fi
+          echo "Definition of Done present and complete."
