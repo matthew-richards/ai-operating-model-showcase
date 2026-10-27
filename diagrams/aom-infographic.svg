@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1530" viewBox="0 0 900 1530" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+<marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker>
+<marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B45309"/></marker></defs>
+<rect width="900" height="1530" rx="24" fill="#FFFFFF"/>
+<text x="48" y="70" font-size="34" font-weight="700" fill="#0F172A">AI Operating Model</text>
+<text x="48" y="106" font-size="19" fill="#64748B">Running AI agents under enterprise security controls</text>
+<rect x="48" y="136" width="804" height="150" rx="12" fill="#0F2A44" stroke="#0F2A44" stroke-width="1.5"/>
+<text x="72" y="168" font-size="14" font-weight="700" fill="#CBD5E1" letter-spacing="1.5">BLUF</text>
+<text x="72" y="200" font-size="23" font-weight="700" fill="#FFFFFF">Bottom line</text>
+<text x="72" y="232" font-size="19" fill="#CBD5E1">AI agents work under the same rules, gates, and</text>
+<text x="72" y="260" font-size="19" fill="#CBD5E1">audit trail expected from a security program.</text>
+<rect x="48" y="310" width="804" height="222" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text x="72" y="342" font-size="14" font-weight="700" fill="#475569" letter-spacing="1.5">1  WHY</text>
+<text x="72" y="374" font-size="23" font-weight="700" fill="#0F172A">The problem</text>
+<text x="72" y="406" font-size="18" fill="#475569">Agents forget everything between sessions and act</text>
+<text x="72" y="434" font-size="18" fill="#475569">with whatever access they are given. Unchecked, they</text>
+<text x="72" y="462" font-size="18" fill="#475569">make unreviewed changes, burn API quotas, and step</text>
+<text x="72" y="490" font-size="18" fill="#475569">on each other's work.</text>
+<rect x="48" y="556" width="804" height="250" rx="12" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+<text x="72" y="588" font-size="14" font-weight="700" fill="#065F46" letter-spacing="1.5">2  CONTROL PLANE</text>
+<text x="72" y="620" font-size="23" font-weight="700" fill="#064E3B">A governed layer</text>
+<text x="72" y="652" font-size="18" fill="#065F46">Agents are treated as privileged operators.</text>
+<text x="72" y="680" font-size="18" fill="#065F46">• Process lives in version-controlled files</text>
+<text x="72" y="708" font-size="18" fill="#065F46">• Secrets injected at runtime only</text>
+<text x="72" y="736" font-size="18" fill="#065F46">• API budget gates on rate-limited APIs</text>
+<text x="72" y="764" font-size="18" fill="#065F46">• Rule breaks logged in an incident ledger</text>
+<rect x="48" y="830" width="804" height="222" rx="12" fill="#FFFBEB" stroke="#B45309" stroke-width="1.5"/>
+<text x="72" y="862" font-size="14" font-weight="700" fill="#92400E" letter-spacing="1.5">3  HUMAN GATE</text>
+<text x="72" y="894" font-size="23" font-weight="700" fill="#78350F">The human owner approves</text>
+<text x="72" y="926" font-size="18" fill="#92400E">Routine, reversible work runs on its own.</text>
+<text x="72" y="954" font-size="18" fill="#92400E">Sending, deleting, spending money, and publishing</text>
+<text x="72" y="982" font-size="18" fill="#92400E">wait for the owner. Messages start as drafts.</text>
+<text x="72" y="1010" font-size="18" fill="#92400E">A declined request is final.</text>
+<text x="48" y="1096" font-size="14" font-weight="700" fill="#64748B" letter-spacing="1.5">4  ONE PATH TO MAIN</text>
+<rect x="48" y="1116" width="176" height="70" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/><text x="136" y="1158" font-size="19" font-weight="700" fill="#0F172A" text-anchor="middle">Change</text>
+<path d="M226,1151 H248" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+<rect x="252" y="1116" width="176" height="70" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/><text x="340" y="1158" font-size="19" font-weight="700" fill="#0F172A" text-anchor="middle">Pull request</text>
+<path d="M430,1151 H452" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+<rect x="456" y="1116" width="176" height="70" rx="12" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/><text x="544" y="1158" font-size="19" font-weight="700" fill="#064E3B" text-anchor="middle">Required CI</text>
+<path d="M634,1151 H656" stroke="#334155" stroke-width="2" marker-end="url(#a)"/>
+<rect x="660" y="1116" width="176" height="70" rx="12" fill="#0F2A44" stroke="#0F2A44" stroke-width="1.5"/><text x="748" y="1158" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle">Ruleset</text>
+<text x="48" y="1218" font-size="17" fill="#475569">Definition of Done, secrets scan, Markdown lint. No bypass, not even the owner.</text>
+<text x="48" y="1256" font-size="14" font-weight="700" fill="#64748B" letter-spacing="1.5">5  ENFORCED VS. WRITTEN POLICY</text>
+<rect x="48" y="1272" width="392" height="210" rx="12" fill="#ECFDF5" stroke="#047857" stroke-width="1.5"/>
+<text x="72" y="1312" font-size="23" font-weight="700" fill="#064E3B">Enforced</text>
+<text x="72" y="1344" font-size="18" fill="#065F46">• Required CI checks</text>
+<text x="72" y="1372" font-size="18" fill="#065F46">• No ruleset bypass</text>
+<text x="72" y="1400" font-size="18" fill="#065F46">• No force-push or</text>
+<text x="72" y="1428" font-size="18" fill="#065F46">  deletion of main</text>
+<text x="72" y="1456" font-size="18" fill="#065F46">• Send/approval prompts</text>
+<rect x="460" y="1272" width="392" height="210" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text x="484" y="1312" font-size="23" font-weight="700" fill="#0F172A">Written policy</text>
+<text x="484" y="1344" font-size="18" fill="#475569">• Claim and branch rules</text>
+<text x="484" y="1372" font-size="18" fill="#475569">• Visible, logged commands</text>
+<text x="484" y="1400" font-size="18" fill="#475569">• Approval before publish,</text>
+<text x="484" y="1428" font-size="18" fill="#475569">  delete, or spend</text>
+<text x="484" y="1456" font-size="18" fill="#475569">Gap tracked as future work</text>
+</svg>

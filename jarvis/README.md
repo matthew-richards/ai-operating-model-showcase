@@ -10,6 +10,8 @@ The front end is a pair of stock [Rokid Glasses](https://store.rokid.com/product
 
 ## How it works
 
+For a step-by-step walkthrough, see [How Jarvis works](how-jarvis-works.md).
+
 ![How Jarvis works: my voice goes from the glasses to Rokid's speech-to-text, through Cloudflare to the Jarvis bridge and models at home, and the answer streams back to the glasses](assets/jarvis-architecture-simple.svg)
 
 *One voice turn, simplified. The [full diagram (open full size)](assets/jarvis-architecture.png) adds the guardrails, memory, evaluation loop, and GitHub.*
@@ -28,7 +30,7 @@ The front end is a pair of stock [Rokid Glasses](https://store.rokid.com/product
 4. **Model routing: local first.** The bridge talks to a local model first (Ollama on my own GPU) and can use hosted cloud models when a task needs them. Because the interface is standard, swapping models is a configuration change, not a rewrite.
 5. **Answer out.** The response streams to the glasses' display and speaker, formatted for a small heads-up display: one main message, a few steps at most.
 6. **Memory and notes.** Jarvis keeps its own memory, and my notes vault stays in sync on a schedule, so what I capture on the go ends up with the rest of my notes.
-7. **GitHub as home base.** The bridge code, design docs, runbooks, and decision records live on GitHub. Changes go through pull requests with automated checks, and work is tracked on a project board.
+7. **GitHub as home base.** The bridge code, design docs, runbooks, and decision records live on GitHub. Changes go through pull requests with automated checks, and work is tracked on my agile board.
 
 ## Current state vs future state
 

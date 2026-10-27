@@ -38,4 +38,6 @@
   <rect x="418" y="334" width="140" height="32" rx="16" fill="#FEF2F2" stroke="#B91C1C"/>
   <text x="488" y="355" font-size="13" fill="#991B1B" text-anchor="middle">fail: fix and resubmit</text>
   <text x="48" y="420" font-size="13" fill="#64748B">Force-push and deletion of main are blocked. The owner has no bypass.</text>
+  <text x="615" y="292" font-size="12" fill="#64748B">+ Vale (advisory)</text>
+  <text x="1152" y="420" font-size="13" fill="#64748B" text-anchor="end">on GitHub (Actions + ruleset)</text>
 </svg>
