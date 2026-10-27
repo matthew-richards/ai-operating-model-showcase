@@ -24,7 +24,7 @@ Jarvis is also a living lab. I use it to try out different ways of structuring a
 
 ## Testing AI models
 
-Jarvis is also a good way to compare different AI models, including how well they turn speech into text. Wearing the glasses makes this real-world voice testing: noisy rooms, walking outside, and everyday conversation, not clean recordings at a desk.
+Jarvis is also a good way to compare different AI models on accuracy and speed, including how accurately and how quickly they turn speech into text. Wearing the glasses makes this real-world voice testing: noisy rooms, walking outside, and everyday conversation, not clean recordings at a desk.
 
 ## Getting the glasses
 
