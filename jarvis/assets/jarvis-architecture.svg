@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420" font-family="Helvetica,Arial,sans-serif" font-size="14">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 z" fill="#444"/></marker></defs>
+<rect width="860" height="420" fill="#fbfaf7"/>
+<text x="430" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">Jarvis at a glance</text>
+<rect x="20" y="70" width="160" height="70" rx="10" fill="#e8eef7" stroke="#4a6fa5"/>
+<text x="100" y="100" text-anchor="middle">Smart glasses</text><text x="100" y="120" text-anchor="middle" font-size="12" fill="#555">voice + camera (planned)</text>
+<rect x="230" y="70" width="170" height="70" rx="10" fill="#e8eef7" stroke="#4a6fa5"/>
+<text x="315" y="100" text-anchor="middle">Glasses agent bridge</text><text x="315" y="120" text-anchor="middle" font-size="12" fill="#555">auth, wake filter (prototype)</text>
+<rect x="450" y="50" width="390" height="230" rx="12" fill="#eef5ec" stroke="#5a8f4e" stroke-dasharray="6 4"/>
+<text x="645" y="72" text-anchor="middle" font-weight="bold" fill="#3d6b33">Home PC with a GPU</text>
+<rect x="470" y="90" width="170" height="70" rx="10" fill="#fff" stroke="#5a8f4e"/>
+<text x="555" y="120" text-anchor="middle" font-weight="bold">Jarvis gateway</text><text x="555" y="140" text-anchor="middle" font-size="12" fill="#555">chat, API, scheduled jobs</text>
+<rect x="660" y="90" width="160" height="70" rx="10" fill="#fff" stroke="#5a8f4e"/>
+<text x="740" y="120" text-anchor="middle">Local models</text><text x="740" y="140" text-anchor="middle" font-size="12" fill="#555">cloud as fallback</text>
+<rect x="470" y="190" width="170" height="70" rx="10" fill="#fff4e0" stroke="#c48a2c"/>
+<text x="555" y="220" text-anchor="middle">Watchdog</text><text x="555" y="240" text-anchor="middle" font-size="12" fill="#555">OS scheduler, outside gateway</text>
+<rect x="660" y="190" width="160" height="70" rx="10" fill="#fff" stroke="#5a8f4e"/>
+<text x="740" y="220" text-anchor="middle">Notes vault sync</text><text x="740" y="240" text-anchor="middle" font-size="12" fill="#555">every 15 minutes</text>
+<rect x="470" y="320" width="170" height="70" rx="10" fill="#f3e8f7" stroke="#8a5aa5"/>
+<text x="555" y="350" text-anchor="middle">Second agent</text><text x="555" y="370" text-anchor="middle" font-size="12" fill="#555">executes the work</text>
+<rect x="230" y="320" width="170" height="70" rx="10" fill="#f3e8f7" stroke="#8a5aa5"/>
+<text x="315" y="350" text-anchor="middle">Board + repo</text><text x="315" y="370" text-anchor="middle" font-size="12" fill="#555">evidence for "Done"</text>
+<rect x="20" y="320" width="160" height="70" rx="10" fill="#fde8e8" stroke="#b55"/>
+<text x="100" y="350" text-anchor="middle" font-weight="bold">Matthew</text><text x="100" y="370" text-anchor="middle" font-size="12" fill="#555">approves key decisions</text>
+<g stroke="#444" stroke-width="1.6" fill="none" marker-end="url(#a)">
+<line x1="180" y1="105" x2="228" y2="105"/><line x1="400" y1="115" x2="468" y2="122"/>
+<line x1="640" y1="125" x2="658" y2="125"/><line x1="555" y1="190" x2="555" y2="163"/>
+<path d="M520,280 L520,318"/><path d="M590,318 L590,282"/>
+<line x1="470" y1="355" x2="402" y2="355"/><line x1="180" y1="355" x2="228" y2="355"/>
+</g>
+<text x="600" y="303" font-size="12" fill="#555">re-checks each other's "Done"</text>
+<text x="563" y="180" font-size="12" fill="#555">relaunches if down</text>
+</svg>

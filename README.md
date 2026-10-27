@@ -43,12 +43,15 @@ This repository is meant to use the same gate it describes. The CI checks (a Def
 
 The full write-up, including architecture, a case study on a shared control plane for rate-limited APIs, and lessons learned, is in [docs/overview.md](docs/overview.md).
 
+For a personal-assistant case study, see [Jarvis](jarvis/README.md): an assistant that runs on a home PC and is checked by a second agent.
+
 ## Repository layout
 
 | Path | Contents |
 |---|---|
 | `docs/overview.md` | Full narrative overview |
 | `docs/ruleset.json` | Main branch ruleset applied to this repository |
+| `jarvis/` | Jarvis personal-assistant rundown (narrative, early docs, assets) |
 | `diagrams/` | Diagram sources (SVG) and PNG exports |
 | `.github/` | Pull request template (CI workflows pending) |
 
