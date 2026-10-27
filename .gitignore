@@ -1,2 +1,95 @@
+# Security baseline: keep secrets and local state out of git.
+# The secrets scan in CI is the second layer; this file is the first.
+
+# --- Secrets and environment files ---
+.env
+.env.*
+!.env.example
+*.secret
+*.secrets
+secrets/
+credentials*
+*credentials.json
+service-account*.json
+.doppler*
+.vault-token
+
+# --- Keys and certificates ---
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+*.cer
+id_rsa*
+id_ed25519*
+id_ecdsa*
+*.gpg
+*.asc
+
+# --- Cloud and tool credentials ---
+.aws/
+.azure/
+.gcloud/
+.kube/
+kubeconfig*
+.npmrc
+.pypirc
+.netrc
+.git-credentials
+.docker/config.json
+*.tfvars
+*.tfvars.json
+*.tfstate
+*.tfstate.*
+.terraform/
+.cloudflared/
+cert.pem
+
+# --- Logs, dumps, and temp files ---
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+*.dump
+*.sqlite
+*.db
+tmp/
+temp/
+
+# --- Build output and dependencies ---
 node_modules/
+dist/
+build/
+out/
+coverage/
+.cache/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# --- Editors and IDEs ---
+.vscode/
+.idea/
+*.code-workspace
+.obsidian/workspace*.json
+
+# --- OS files ---
 .DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.directory
