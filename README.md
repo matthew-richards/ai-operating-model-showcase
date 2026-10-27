@@ -14,6 +14,12 @@ A working pattern for running AI agents under enterprise security controls.
 
 *The control plane: agents act through a governed layer, and anything consequential routes back to me for approval.*
 
+### At a glance
+
+![AI Operating Model infographic: agents are treated as privileged operators, with process in version-controlled files, a human gate for consequential actions, one gated path to main, and a clear split between enforced controls and written policy](diagrams/aom-infographic.png)
+
+*AI agents, run like privileged operators. Their process lives in version-controlled files, changes go through a gated pipeline, and anything consequential waits for me.*
+
 ## Featured: Jarvis
 
 <a href="jarvis/README.md"><img src="jarvis/assets/rokid-glasses.jpg" alt="Rokid Glasses, the stock smart glasses Jarvis runs on" width="160" align="right"></a>
@@ -60,15 +66,16 @@ Closing the gap between written policy and enforcement is tracked as future work
 
 *Every change takes one path to main, and a failed check sends it back for a fix.*
 
-This repository uses the gate it describes. CI runs the Definition of Done check, the gitleaks secrets scan, and a Markdown lint on every pull request, and the main branch ruleset requires all three. The ruleset also blocks force-push and deletion, with no bypass. A Vale prose check runs too, as advice only. See [docs/ruleset.json](docs/ruleset.json).
+This repository uses the gate it describes. GitHub Actions runs the Definition of Done check, the gitleaks secrets scan, and a Markdown lint on every pull request, and the GitHub ruleset on main requires all three. The ruleset also blocks force-push and deletion, with no bypass. A Vale prose check runs too, as advice only. See [docs/ruleset.json](docs/ruleset.json), or walk through it step by step in [How a change reaches main](docs/how-a-change-reaches-main.md).
 
 ## Repository layout
 
 | Path | Contents |
 |---|---|
 | `docs/overview.md` | Full write-up: architecture, a case study on a shared control plane for rate-limited APIs, and lessons learned |
+| `docs/how-a-change-reaches-main.md` | Step-by-step walkthrough of the change gate |
 | `docs/ruleset.json` | Main branch ruleset applied to this repository |
-| `jarvis/` | Jarvis, my personal AI on Rokid Glasses ([rundown](jarvis/README.md), [image credits](jarvis/assets/CREDITS.md)) |
+| `jarvis/` | Jarvis, my personal AI on Rokid Glasses ([rundown](jarvis/README.md), [how it works, step by step](jarvis/how-jarvis-works.md), [image credits](jarvis/assets/CREDITS.md)) |
 | `diagrams/` | Diagram sources (SVG) and PNG exports |
 | `.github/` | Pull request template and CI workflows |
 

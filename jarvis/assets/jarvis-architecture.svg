@@ -99,7 +99,7 @@
 <text x="900" y="666" text-anchor="middle" font-size="16" font-weight="bold">GitHub: where code and docs live</text>
 <text x="640" y="692" font-size="13">• Bridge code, runbooks, design and decision records</text>
 <text x="640" y="714" font-size="13">• Pull requests with automated checks</text>
-<text x="640" y="736" font-size="13">• Project board tracks the work</text>
+<text x="640" y="736" font-size="13">• Agile board tracks the work</text>
 <!-- arrows -->
 <g stroke="#334155" stroke-width="2" fill="none" font-size="12">
 <path d="M250,165 L308,165" marker-end="url(#a)"/>
