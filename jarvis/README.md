@@ -49,7 +49,7 @@ Jarvis lets me test guardrails, configurations, and prompts against real use, fi
 - **At the edge:** Cloudflare filters and authenticates traffic before it reaches home, and the app checks credentials again on its own.
 - **Around tool calls:** Every tool call goes through an MCP gateway outside the sandbox. It checks which tool, which arguments, and which caller, and logs each call. It's tested, and now rolling out more widely.
 - **Around actions:** [OpenShell](https://github.com/NVIDIA/OpenShell) is the outer boundary, tested and now rolling out more widely. Jarvis runs inside its sandbox, and every network call leaves through its supervisor. Jarvis holds only a placeholder credential. The supervisor swaps in the real one for approved destinations. Responses aren't filtered yet, so Jarvis uses only trusted MCP servers, each with its own scoped token.
-- **Around visibility:** Opik traces model calls from OpenRouter, Ollama, and local resources. Tracing gateway tool calls is planned.
+- **Around visibility:** Opik traces model calls from OpenRouter, Ollama, and local resources.
 - **Around spending:** Cloud model use has a hard spending cap, and heavy jobs check the remaining budget before they run.
 - **Around uptime:** After an outage, Jarvis got a watchdog that runs outside the system it watches. It only acts after repeated failed checks, and it waits between restarts so it can't loop.
 - **Around its role:** When Jarvis once went beyond its agreed role, it wrote a blameless report on itself, and the lesson became a written rule.

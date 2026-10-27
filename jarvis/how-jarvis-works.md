@@ -29,6 +29,6 @@
 
 - Every network call leaves the sandbox through the [OpenShell](https://github.com/NVIDIA/OpenShell) supervisor. Tool calls then go through an MCP gateway that checks the tool, its arguments, and the caller, and logs the call. Both are tested, and now rolling out more widely.
 - Jarvis runs inside the [OpenShell](https://github.com/NVIDIA/OpenShell) sandbox, with outbound traffic blocked by default. It holds only a placeholder credential, and the supervisor swaps in the real one for approved destinations.
-- Opik traces model calls from OpenRouter, Ollama, and local resources. Tracing gateway tool calls is planned.
+- Opik traces model calls from OpenRouter, Ollama, and local resources.
 - Cloud model use has a hard spending cap.
 - A watchdog outside the system restarts the bridge only after repeated failed checks.

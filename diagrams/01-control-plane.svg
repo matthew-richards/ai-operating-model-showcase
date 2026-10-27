@@ -57,9 +57,9 @@
 <path d="M570,880 V778" stroke="#047857" stroke-width="3" fill="none" marker-end="url(#g)"/>
 <text x="430" y="824" font-size="19" fill="#334155" text-anchor="start">tool calls</text>
 <text x="580" y="824" font-size="19" fill="#047857" text-anchor="start">results</text>
-<rect x="300" y="1170" width="390" height="100" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
-<text x="495.0" y="1215.0" font-size="21" font-weight="700" fill="#0F172A" text-anchor="middle">Internet edge</text>
-<text x="495.0" y="1241.0" font-size="19" fill="#64748B" text-anchor="middle">enforces limits</text>
+<rect x="300" y="1170" width="420" height="100" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="510.0" y="1215.0" font-size="21" font-weight="700" fill="#0F172A" text-anchor="middle">Internet edge</text>
+<text x="510.0" y="1241.0" font-size="19" fill="#64748B" text-anchor="middle">enforces limits</text>
 <path d="M420,1090 V1162" stroke="#334155" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
 <path d="M570,1170 V1098" stroke="#047857" stroke-width="2.5" fill="none" marker-end="url(#g)"/>
 <path d="M320,770 V1162" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
@@ -72,19 +72,19 @@
 <text x="150.0" y="1279.0" font-size="19" fill="#065F46" text-anchor="middle">knowledge base</text>
 <path d="M300,1195 H268" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
 <path d="M260,1240 H292" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#g)"/>
-<rect x="740" y="1160" width="240" height="145" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
-<text x="860.0" y="1215.5" font-size="21" font-weight="700" fill="#0F172A" text-anchor="middle">Model providers</text>
-<text x="860.0" y="1241.5" font-size="19" fill="#64748B" text-anchor="middle">OpenRouter</text>
-<text x="860.0" y="1267.5" font-size="19" fill="#64748B" text-anchor="middle">Ollama</text>
-<path d="M690,1195 H732" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
-<path d="M740,1240 H698" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#g)"/>
-<text x="860" y="1146" font-size="19" fill="#334155" text-anchor="middle">model calls</text>
+<rect x="770" y="1160" width="240" height="145" rx="12" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="890.0" y="1215.5" font-size="21" font-weight="700" fill="#0F172A" text-anchor="middle">Model providers</text>
+<text x="890.0" y="1241.5" font-size="19" fill="#64748B" text-anchor="middle">OpenRouter</text>
+<text x="890.0" y="1267.5" font-size="19" fill="#64748B" text-anchor="middle">Ollama</text>
+<path d="M720,1195 H762" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M770,1240 H728" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#g)"/>
+<text x="890" y="1146" font-size="19" fill="#334155" text-anchor="middle">model calls</text>
 <rect x="760" y="880" width="260" height="96" rx="12" fill="#F5F3FF" stroke="#6D28D9" stroke-width="1.5"/>
 <text x="890.0" y="923.0" font-size="21" font-weight="700" fill="#4C1D95" text-anchor="middle">Observability (Opik)</text>
 <text x="890.0" y="949.0" font-size="19" fill="#5B21B6" text-anchor="middle">traces</text>
-<path d="M660,1170 V930 H752" stroke="#6D28D9" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#p)"/>
-<text x="672" y="1150" font-size="17" fill="#6D28D9" text-anchor="start">live</text>
-<text x="768" y="1004" font-size="17" fill="#6D28D9" text-anchor="start">planned</text>
+<path d="M650,770 V1162" stroke="#6D28D9" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#p)"/>
+<text x="673" y="1000" font-size="17" fill="#6D28D9" text-anchor="middle" transform="rotate(-90 673 1000)">live</text>
+<path d="M680,1170 V920 H752" stroke="#6D28D9" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#p)"/>
 <path d="M760,1024 H800" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#a)"/>
 <text x="810" y="1030" font-size="16" fill="#334155" text-anchor="start">outbound (away from agents)</text>
 <path d="M760,1050 H800" stroke="#047857" stroke-width="2" fill="none" marker-end="url(#g)"/>
