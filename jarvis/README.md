@@ -36,7 +36,7 @@ The front end is a pair of stock [Rokid Glasses](https://store.rokid.com/product
 
 *Only the speech-to-text stage changes between today and the planned app.*
 
-**Current state.** Stock Rokid Glasses, with Jarvis registered as a custom agent on Rokid's platform. I say "Hi Rokid, open Jarvis", Rokid's platform turns my speech into text, and that text streams to Jarvis. From there it passes through Cloudflare, the bridge, and model routing. The answer streams back to the display and speaker.
+**Current state.** Stock Rokid Glasses, with Jarvis registered as a custom agent on Rokid's platform. I say "Hi Rokid, open Jarvis", Rokid's platform turns my speech into text, and that text streams to Jarvis. From there it goes through Cloudflare to the containerized bridge, model routing, and sandboxed tools and actions, and the answer streams back to the display and speaker.
 
 **Future state (planned).** I build my own app on the glasses using Rokid's speech SDK. That puts the audio and speech-to-text stage in my hands, so I can swap and compare speech-to-text models, local or cloud, on accuracy and speed, alongside the model comparisons I already run. Everything downstream (Cloudflare, the bridge, model routing, the sandbox, and the guardrails) stays the same.
 
