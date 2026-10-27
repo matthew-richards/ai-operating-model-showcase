@@ -2,7 +2,7 @@
 
 A working pattern for running AI agents under enterprise security controls.
 
-**Bottom line:** my AI agents work under the same kind of rules, gates, and audit trail I'd expect from a security program, and this repo shows how.
+**Bottom line:** my AI agents work under the same kind of rules, gates, and audit trail I'd expect from a security program, and this repository shows how.
 
 ## What you'll find
 
@@ -30,7 +30,7 @@ AI agents are capable, but they forget everything between sessions and act with 
 
 ## What it covers
 
-**Multi-agent governance and an incident ledger.** Several agents share the same repositories and task board. Each one claims work before starting, works on its own branch prefix, and hands off with a link to a pull request, not a chat message. When an agent breaks a rule, the deviation is written up as an incident, and the incident feeds back into the rules.
+**Multi-agent governance and an incident ledger.** Each agent claims work before starting, works on its own branch prefix, and hands off with a link to a pull request, not a chat message. When an agent breaks a rule, the deviation is written up as an incident, and the incident feeds back into the rules.
 
 **Human approval gates.** Routine, reversible work runs on its own. Sending messages, deleting anything, spending money, and publishing stop and wait for the owner. Outgoing messages are prepared as drafts. A declined request is final.
 

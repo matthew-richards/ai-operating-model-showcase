@@ -12,7 +12,7 @@ The front end is a pair of stock [Rokid Glasses](https://store.rokid.com/product
 
 ![How Jarvis works: my voice goes from the glasses to Rokid's speech-to-text, through Cloudflare to the Jarvis bridge and models at home, and the answer streams back to the glasses](assets/jarvis-architecture-simple.svg)
 
-*One voice turn, simplified. The [full diagram](assets/jarvis-architecture.svg) adds the guardrails, memory, evaluation loop, and GitHub.*
+*One voice turn, simplified. The [full diagram (open full size)](assets/jarvis-architecture.png) adds the guardrails, memory, evaluation loop, and GitHub.*
 
 1. **Voice in.** I speak to the glasses. Rokid's platform turns my speech into text and sends that text to Jarvis.
 2. **Cloudflare as the front door.** The callback doesn't reach my hardware directly.
