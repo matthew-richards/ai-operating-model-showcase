@@ -10,7 +10,7 @@ I'm building it around [Rokid Glasses](https://store.rokid.com/products/rokid-gl
 
 ## Why it matters to me
 
-Jarvis is a real system I use every day, which makes it a good place to test guardrails on something that matters, not on a demo. The guardrails I'm trying out include:
+Jarvis is a real system I use every day, which makes it a good place to test guardrails, architecture ideas, and AI models on something that matters, not on a demo. The guardrails I'm trying out include:
 
 - **Spending limits.** Cloud model use has a hard cap, so a runaway job can't run up a bill.
 - **Sandboxing.** Before trusting an agent with real actions, I tested a sandbox to confirm it blocks what it should.
@@ -21,6 +21,10 @@ Jarvis is a real system I use every day, which makes it a good place to test gua
 ## Experimenting with architecture
 
 Jarvis is also a living lab. I use it to try out different ways of structuring a personal AI: which parts run locally and which in the cloud, how agents split up work, and how corrections turn into lasting rules. Some experiments stick and some get dropped. Either way, I learn from a system I actually depend on.
+
+## Testing AI models
+
+Jarvis is also a good way to compare different AI models, including how well they turn speech into text. Wearing the glasses makes this real-world voice testing: noisy rooms, walking outside, and everyday conversation, not clean recordings at a desk.
 
 ## Getting the glasses
 
