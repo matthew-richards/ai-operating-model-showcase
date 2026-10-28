@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1310" height="530" viewBox="0 0 1310 530" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748B"/></marker></defs>
+<rect width="1310" height="530" rx="24" fill="#FFFFFF"/>
+<text x="650" y="44" font-size="26" fill="#0F172A" text-anchor="middle" font-weight="700">Market Lab data lake (planned)</text>
+<rect x="30" y="130" width="190" height="100" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="125.0" y="176.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Capture buffer</text>
+<text x="125.0" y="202.0" font-size="15" fill="#475569" text-anchor="middle">today's session</text>
+<rect x="30" y="300" width="190" height="100" rx="16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="125.0" y="346.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Historical backfill</text>
+<text x="125.0" y="372.0" font-size="15" fill="#475569" text-anchor="middle">licensed provider</text>
+<rect x="270" y="200" width="190" height="100" rx="16" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+<text x="365.0" y="246.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Compact</text>
+<text x="365.0" y="272.0" font-size="15" fill="#475569" text-anchor="middle">after each session</text>
+<rect x="510" y="80" width="330" height="360" rx="20" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="675" y="112" font-size="18" fill="#475569" text-anchor="middle" font-weight="700">Private lake</text>
+<rect x="540" y="135" width="270" height="110" rx="16" fill="#ECFDF5" stroke="#10B981" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="675.0" y="186.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Raw zone</text>
+<text x="675.0" y="212.0" font-size="15" fill="#475569" text-anchor="middle">optional, compressed</text>
+<rect x="540" y="290" width="270" height="110" rx="16" fill="#ECFDF5" stroke="#10B981" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="675.0" y="341.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Curated zone</text>
+<text x="675.0" y="367.0" font-size="15" fill="#475569" text-anchor="middle">Parquet, by date</text>
+<rect x="890" y="200" width="170" height="100" rx="16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="975.0" y="246.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Catalog</text>
+<text x="975.0" y="272.0" font-size="15" fill="#475569" text-anchor="middle">versioned schemas</text>
+<rect x="1110" y="90" width="170" height="90" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="1195.0" y="131.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Backtests</text>
+<text x="1195.0" y="157.0" font-size="15" fill="#475569" text-anchor="middle">lab engine</text>
+<rect x="1110" y="205" width="170" height="90" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="1195.0" y="246.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">SQL</text>
+<text x="1195.0" y="272.0" font-size="15" fill="#475569" text-anchor="middle">cross-day queries</text>
+<rect x="1110" y="320" width="170" height="90" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="1195.0" y="361.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Local copy</text>
+<text x="1195.0" y="387.0" font-size="15" fill="#475569" text-anchor="middle">fast iteration</text>
+<line x1="220" y1="180" x2="268" y2="235" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="220" y1="350" x2="268" y2="265" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<line x1="460" y1="235" x2="538" y2="190" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<line x1="460" y1="265" x2="538" y2="345" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<line x1="810" y1="345" x2="888" y2="270" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<line x1="1060" y1="230" x2="1108" y2="135" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<line x1="1060" y1="250" x2="1108" y2="250" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<line x1="1060" y1="270" x2="1108" y2="365" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<text x="650" y="500" font-size="16" fill="#475569" text-anchor="middle" font-style="italic">Writers and readers use separate roles. Public access blocked. Encrypted at rest.</text>
+</svg>

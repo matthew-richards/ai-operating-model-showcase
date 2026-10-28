@@ -9,6 +9,7 @@ A working pattern for running AI agents under enterprise security controls.
 - **Governance for multiple agents.** How agents claim work, stay in their own lanes, and log their own rule breaks in an incident ledger.
 - **Approval gates and enforced controls.** What runs on its own, what waits for a human, and which controls a machine actually enforces.
 - **Jarvis.** A personal AI on Rokid Glasses that I use as a real-world lab for guardrails and model testing.
+- **Market Lab.** Market data captured for backtesting, headed for a private data lake (planned).
 
 ![Control plane: AI agents run inside an agent sandbox (OpenShell) that confines files, processes, and system calls, with an API rate limit in the sandbox. Every network call leaves through the OpenShell supervisor, which checks policy and swaps in the real credential from the OpenShell provider store, fed at runtime by the secrets manager. Tool calls go to the MCP gateway, which checks tools, arguments, and caller, logs each call, and fronts one MCP servers group (for example GitHub, AI Operating Model, knowledge base). Model calls go to model providers (OpenRouter, Ollama). The Internet edge enforces limits outside the sandbox. The GitHub gate is the human gate: the owner approves PRs and merges. Opik traces model calls](diagrams/01-control-plane.png)
 
@@ -29,6 +30,14 @@ Two separate layers, on purpose. [OpenShell](https://github.com/NVIDIA/OpenShell
 Jarvis is my personal AI assistant, built around Rokid Glasses. I also use it to test guardrails, try architecture ideas, and compare AI models, speech-to-text included, on accuracy and speed.
 
 **[Explore Jarvis →](jarvis/README.md)**
+
+<br clear="right">
+
+## Featured: Market Lab
+
+Market Lab captures live market data for backtesting. A private data lake, stored as Parquet, is planned. It's designed so a data platform can be swapped by writing a new adapter, and it's paused while it moves to AWS. This repo shares the design only, with no market data.
+
+**[Explore Market Lab →](market-lab/README.md)**
 
 <br clear="right">
 
@@ -78,6 +87,7 @@ This repository uses the gate it describes. GitHub Actions runs the Definition o
 | `docs/how-a-change-reaches-main.md` | Step-by-step walkthrough of the change gate |
 | `docs/ruleset.json` | Main branch ruleset applied to this repository |
 | `jarvis/` | Jarvis, my personal AI on Rokid Glasses ([rundown](jarvis/README.md), [how it works, step by step](jarvis/how-jarvis-works.md), [image credits](jarvis/assets/CREDITS.md)) |
+| `market-lab/` | Market Lab, market data for backtesting ([rundown](market-lab/README.md), [how it works, step by step](market-lab/how-market-lab-works.md)) |
 | `diagrams/` | Diagram sources (SVG) and PNG exports |
 | `.github/` | Pull request template and CI workflows |
 
