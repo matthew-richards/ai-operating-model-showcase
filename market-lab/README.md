@@ -41,7 +41,7 @@ It stopped in late October 2026. Until then it ran on my own computer, with raw 
 **Future state: migration to AWS (planned).** The code moves to a virtual machine on AWS with more resources.
 The planned pieces are:
 
-- **A private data lake for backtesting.** Raw data is stored as Parquet, with public access blocked and encryption on.
+- **A private data lake for backtesting.** Parquet tables partitioned by date, with public access blocked and encryption on. See [Data lake](#data-lake-planned).
 - **Infrastructure as code.** The cloud setup is defined in files and reviewed like any other change.
 - **Short-lived cloud credentials.** Pipelines sign in with temporary credentials instead of long-lived ones.
 - **A hosted store for cleaned data.** The choice between options is still open.
@@ -49,6 +49,63 @@ The planned pieces are:
 **What it unlocks.** Capture no longer runs on my personal computer.
 The bigger machine leaves room for more capture and heavier backtests.
 The provider adapter also lets me add or swap a data platform later.
+
+## Data lake (planned)
+
+The data lake is the core of the future state. It's designed, not built.
+The design work covers the zones, the file format, the data model, access, and cost.
+
+![Market Lab data lake, planned: after each session the capture buffer is compacted into a private lake with an optional raw zone and a curated Parquet zone partitioned by date; a catalog with versioned schemas feeds backtests, cross-day SQL, and a local copy for fast iteration](assets/market-lab-data-lake.svg)
+
+*Planned. Dashed boxes don't exist yet.*
+
+### What's built today
+
+- **Dated folders.** Each capture session writes to its own private, dated folder.
+- **Raw data out of Git.** Live data never gets committed.
+- **Size logging.** After the close, a job records how much data each session wrote and how many calls it used.
+- **Growth and cost models.** Written estimates of how fast the data grows and what each storage option would cost. They drove the design below.
+
+### Zones
+
+- **Capture buffer.** The current session lives on the capture machine. Live capture never waits on the lake.
+- **Raw zone (optional).** Compressed copies of the original captures, kept for replay.
+- **Curated zone.** Cleaned, compacted Parquet tables. This is the durable research copy that backtests read.
+- **One home per role.** Live data lives on the capture machine. The durable research copy lives in the curated zone.
+
+### Format and data model
+
+- **Parquet.** A columnar format, so a query reads only the columns it needs.
+- **One table per dataset.** Price bars, quotes, market-depth snapshots, and open interest each get their own table.
+- **Partitioned by session date.** Every table is split by date first, because backtests ask for date ranges. Symbol is a second split only where it helps.
+- **Compaction.** After each session, the small capture files are merged into a few larger Parquet files. That avoids the slow, costly small-file problem.
+- **Versioned schemas.** Each table carries a schema version. Unknown fields fail closed instead of slipping into results.
+- **Provenance.** Every row keeps where it came from, so results stay labeled.
+- **Cleaned features.** A small hosted database for cleaned, derived data. The choice is still open.
+
+### Access controls
+
+- **Private by default.** Public access is blocked, and data is encrypted at rest and in transit.
+- **Separate roles.** The writer can only add data to its own area. Readers can only read.
+- **Temporary credentials.** No long-lived cloud credentials on personal machines.
+- **Short-lived query results.** Query output goes to its own area and expires.
+- **No republishing.** The raw data is licensed for private research. It never goes to a public site.
+
+### Cost guardrails
+
+- **Pay for what you read.** Columnar files plus date partitions keep each query small.
+- **No small files.** Compaction keeps object counts low.
+- **Tiering by age.** Older data moves to cheaper storage that SQL can still reach.
+- **Old versions expire.** Versioning stays on, and replaced copies are cleaned up.
+- **Local first for tight loops.** Fast iteration runs on a local copy, not on paid cloud queries.
+- **Serverless, not a warehouse.** Nothing bills while idle. A full data warehouse was considered and ruled out as overkill at this scale.
+- **Cloud spend caps.** Cloud work runs under hard spending limits.
+
+### How backtesting reads it
+
+- **The lab engine** reads Parquet for a date range and loads only the columns a test needs.
+- **SQL** handles questions across many sessions.
+- **A local copy** of a slice keeps experiments fast and free.
 
 ## Guardrails, as a threat model
 
@@ -69,7 +126,7 @@ Each line names a threat, the control, and whether it's enforced today or planne
 Market Lab is a place to try ideas on a small, real system:
 
 - **Swappable providers.** Keeping the data platform behind one adapter, so it can change without touching capture or storage.
-- **Storage tiers.** Comparing local folders with a hosted lake and database before choosing one.
+- **Storage tiers.** Comparing local folders, a hosted lake, and a hosted database, with growth and cost models, before choosing one.
 - **Safe migration.** Planning the move to AWS so existing data keeps building with no reset.
 - **Pluggable backtests.** A lab engine where each piece of a test run can be swapped.
 

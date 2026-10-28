@@ -18,6 +18,13 @@ Capture is paused on purpose while it moves to AWS. The steps stay the same afte
 9. **Backtests and rundowns run.** The lab engine runs backtests on the stored data. An agent writes a summary with charts.
 10. **I review it.** Results come to me through a pull request.
 
+## After the move (planned)
+
+1. **The session is compacted.** After the close, small capture files are merged into Parquet, one table per dataset.
+2. **Data lands in the lake.** Curated tables are split by session date. Compressed raw copies are optional.
+3. **The catalog updates.** New partitions are registered, with a schema version on each table.
+4. **Backtests read it.** The lab engine loads a date range and only the columns it needs.
+
 ## Around every turn
 
 - **Analysis only.** The lab is built to read market data, never to act in the market.
