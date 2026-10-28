@@ -26,9 +26,9 @@ def box(o, x, y, w, h, title, sub, fill, stroke, dash=False):
     text(o, x + w / 2, y + h / 2 + 22, sub, 15, SUB)
 
 
-def arrow(o, x1, y1, x2, y2, dash=False):
+def arrow(o, x1, y1, x2, y2, dash=False, color="#64748B"):
     d = ' stroke-dasharray="6 6"' if dash else ""
-    o.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"{d}/>')
+    o.append(f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{color}" stroke-width="2.5" marker-end="url(#a)"{d}/>')
 
 
 BLUE = ("#EFF6FF", "#3B82F6")
@@ -36,26 +36,30 @@ GREEN = ("#ECFDF5", "#10B981")
 AMBER = ("#FFFBEB", "#F59E0B")
 GRAY = ("#F8FAFC", "#94A3B8")
 
-# 1. Simple architecture: one capture session, left to right.
+# 1. Simple architecture: one capture session.
+# Solid arrows carry data one way, left to right. Dashed arrows are requests.
 o = []
-text(o, 600, 50, "Market Lab: how data moves", 26, bold=True)
-box(o, 40, 120, 200, 110, "Provider adapter", "any data platform", *GRAY)
-box(o, 300, 120, 200, 110, "Rate gate", "shared call limit", *AMBER)
-box(o, 560, 120, 200, 110, "Capture", "scheduled scripts", *BLUE)
-box(o, 820, 120, 200, 110, "Local storage", "private, dated", *GREEN)
-arrow(o, 560, 160, 502, 160)
-arrow(o, 300, 160, 242, 160)
-arrow(o, 242, 192, 298, 192)
-arrow(o, 502, 192, 558, 192)
-arrow(o, 760, 175, 818, 175)
-box(o, 560, 300, 200, 100, "Watchdog", "restarts capture", *AMBER)
-arrow(o, 660, 300, 660, 232, dash=True)
-box(o, 820, 300, 200, 100, "Rundowns", "summaries + charts", *BLUE)
-arrow(o, 920, 230, 920, 298)
-box(o, 1060, 300, 120, 100, "Me", "review", *GRAY)
-arrow(o, 1020, 350, 1058, 350)
-text(o, 600, 450, "Raw data stays local. Only summaries and charts leave.", 16, SUB, ital=True)
-svg("market-lab-architecture-simple.svg", 1200, 480, o)
+text(o, 650, 44, "Market Lab: how data moves", 26, bold=True)
+Y, H, BW = 210, 100, 170
+xs = [30, 240, 450, 660, 870, 1080]
+box(o, xs[0], Y, BW, H, "Data provider", "any platform", *GRAY)
+box(o, xs[1], Y, BW, H, "Provider adapter", "swap point", *GRAY)
+box(o, xs[2], Y, BW, H, "Capture", "scheduled jobs", *BLUE)
+box(o, xs[3], Y, BW, H, "Private storage", "dated folders", *GREEN)
+box(o, xs[4], Y, BW, H, "Backtests", "lab + rundowns", *BLUE)
+box(o, xs[5], Y, BW, H, "Me", "review", *GRAY)
+box(o, 345, 70, 170, 80, "API budget gate", "shared limits", *AMBER)
+arrow(o, 520, Y - 2, 480, 152, dash=True)
+arrow(o, 380, 152, 340, Y - 2, dash=True)
+arrow(o, xs[1], Y + 30, xs[0] + BW + 2, Y + 30, dash=True)
+arrow(o, xs[0] + BW, Y + 70, xs[1] - 2, Y + 70)
+arrow(o, xs[1] + BW, Y + 70, xs[2] - 2, Y + 70)
+for i in (2, 3, 4):
+    arrow(o, xs[i] + BW, Y + 50, xs[i + 1] - 2, Y + 50)
+box(o, 450, 380, 170, 90, "Watchdog", "alerts me", *AMBER)
+arrow(o, 535, Y + H, 535, 378)
+text(o, 650, 520, "Solid: data, one way. Dashed: requests. Raw data stays private.", 16, SUB, ital=True)
+svg("market-lab-architecture-simple.svg", 1300, 550, o)
 
 # 2. Current state vs future state.
 o = []
@@ -63,21 +67,15 @@ text(o, 600, 50, "Market Lab: current vs future state", 26, bold=True)
 text(o, 100, 130, "Today", 20, bold=True)
 text(o, 100, 156, "on hiatus", 15, SUB, ital=True)
 box(o, 180, 90, 240, 100, "Capture", "my computer, stopped", *GRAY)
-box(o, 480, 90, 240, 100, "Local storage", "dated folders", *GREEN)
-box(o, 780, 90, 240, 100, "Rundowns", "summaries + charts", *BLUE)
-arrow(o, 420, 140, 478, 140)
-arrow(o, 720, 140, 778, 140)
+box(o, 480, 90, 240, 100, "Private storage", "my computer", *GREEN)
+box(o, 780, 90, 240, 100, "Backtests", "lab + rundowns", *BLUE)
+arrow(o, 420, 140, 478, 140, color="#CBD5E1")
+arrow(o, 720, 140, 778, 140, color="#CBD5E1")
 text(o, 100, 300, "Planned", 20, bold=True)
 box(o, 180, 250, 240, 100, "Capture", "AWS virtual machine", *BLUE, dash=True)
-box(o, 480, 250, 240, 100, "Cloud storage", "private data lake", *GREEN, dash=True)
-box(o, 780, 250, 240, 100, "Rundowns", "unchanged", *BLUE)
+box(o, 480, 250, 240, 100, "Data lake", "Parquet, private", *GREEN, dash=True)
+box(o, 780, 250, 240, 100, "Backtests", "unchanged", *BLUE)
 arrow(o, 420, 300, 478, 300, dash=True)
 arrow(o, 720, 300, 778, 300, dash=True)
 text(o, 600, 400, "Capture and storage move to AWS. Review stays the same.", 16, SUB, ital=True)
 svg("market-lab-current-vs-future.svg", 1200, 430, o)
-
-# 3. Placeholder photo.
-o = ['<rect x="12" y="12" width="616" height="456" rx="20" fill="#F1F5F9" stroke="#94A3B8" stroke-width="3" stroke-dasharray="14 10"/>',
-     '<polyline points="120,330 220,260 300,290 400,190 520,230" fill="none" stroke="#3B82F6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>']
-text(o, 320, 400, "Placeholder image", 28, SUB, bold=True)
-svg("market-lab-placeholder.svg", 640, 480, o)
