@@ -2,6 +2,8 @@
 
 [← Back to the AI Operating Model](../README.md)
 
+> **No market data here.** This repo shares design and docs only. It contains no market data from any provider, live or historical. Licensed data is never republished.
+
 Market Lab captures live market data for backtesting.
 The plan is a private data lake that stores the data as Parquet files.
 It's analysis only. It never places anything in the market.
@@ -58,6 +60,8 @@ The design work covers the zones, the file format, the data model, access, and c
 ![Market Lab data lake, planned: after each session the capture buffer, plus a planned historical backfill from a licensed provider, is compacted into a private lake with an optional raw zone and a curated Parquet zone partitioned by date; a catalog with versioned schemas feeds backtests, cross-day SQL, and a local copy for fast iteration](assets/market-lab-data-lake.svg)
 
 *Planned. Dashed boxes don't exist yet.*
+
+The lake is private. None of its data is published here or anywhere else.
 
 ### What's built today
 

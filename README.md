@@ -35,7 +35,7 @@ Jarvis is my personal AI assistant, built around Rokid Glasses. I also use it to
 
 ## Featured: Market Lab
 
-Market Lab captures live market data for backtesting. A private data lake, stored as Parquet, is planned. It's designed so a data platform can be swapped by writing a new adapter, and it's paused while it moves to AWS.
+Market Lab captures live market data for backtesting. A private data lake, stored as Parquet, is planned. It's designed so a data platform can be swapped by writing a new adapter, and it's paused while it moves to AWS. This repo shares the design only, with no market data.
 
 **[Explore Market Lab →](market-lab/README.md)**
 
