@@ -5,6 +5,8 @@
 Market Lab is my personal market-data pipeline.
 It captures live market data on a schedule, stores it privately, and turns it into summaries and charts I can read.
 It's analysis only. It never places anything in the market.
+It's modular. Any market-data platform can plug in behind one adapter.
+The platform I use in development is one implementation, not the product.
 It's also where I practice running scheduled jobs, guardrails, and AI agents against real, messy data.
 
 <img src="assets/market-lab-placeholder.png" alt="Placeholder image for Market Lab" width="320">
@@ -17,25 +19,38 @@ For a step-by-step walkthrough, see [How Market Lab works](how-market-lab-works.
 
 ![How Market Lab works: capture scripts pull from a licensed market feed through a shared rate gate, save to private local storage, and a watchdog restarts capture if it stops; summaries and charts go to me for review](assets/market-lab-architecture-simple.svg)
 
-*One capture session, simplified.*
+*One capture session, simplified. The provider adapter is the swap point.*
 
 1. **Scheduled start.** Capture jobs start before the market opens and wait for the session.
-2. **Sign-in check.** When the data provider asks, I confirm sign-in on my phone.
-3. **Rate gate.** Every call goes through one shared limit, so jobs can't flood the feed.
-4. **Capture.** Scripts record market depth and quotes during set windows.
-5. **Private storage.** Raw data lands in dated local folders and is never committed or shared.
-6. **Rundowns.** After the close, an agent turns the data into summaries and charts.
-7. **Review.** I read the rundown. Summaries go to my notes through a pull request.
+2. **Provider adapter.** Capture talks to one adapter, not to a vendor. Swapping platforms means writing a new adapter.
+3. **Sign-in check.** When the data provider asks, I confirm sign-in on my phone.
+4. **Rate gate.** Every call goes through one shared limit, so jobs can't flood the feed.
+5. **Capture.** Scripts record market depth and quotes during set windows.
+6. **Private storage.** Raw data lands in dated local folders and is never committed or shared.
+7. **Rundowns.** After the close, an agent turns the data into summaries and charts.
+8. **Review.** I read the rundown. Summaries go to my notes through a pull request.
 
 ## Current state vs future state
 
 ![Market Lab current state vs future state: today capture, storage, and rundowns run on my computer; in the plan, only storage moves to the cloud](assets/market-lab-current-vs-future.svg)
 
-*Only the storage layer changes between today and the plan.*
+*Capture and storage move to AWS. The review side stays the same.*
 
-**Current state.** Capture runs on my own computer. Raw data stays in local, dated folders. Summaries and charts go to my notes.
+**Current state: on hiatus.** Capture ran on my own computer, with raw data in local, dated folders.
+I stopped local capture after October 21, 2026, on purpose.
+The scheduled capture jobs and the watchdog are paused until the move is done.
 
-**Future state (planned).** Storage moves to the cloud on AWS: a data lake for raw files and a database for cleaned data. The design is still open. Capture and review stay the same.
+**Future state: migration to AWS (planned).** The code moves to a virtual machine on AWS with more resources.
+The planned pieces are:
+
+- **A private data lake.** Raw files go to cloud storage with public access blocked and encryption on.
+- **Infrastructure as code.** The cloud setup is defined in files and reviewed like any other change.
+- **Short-lived cloud credentials.** Pipelines sign in with temporary credentials instead of long-lived ones.
+- **A hosted store for cleaned data.** The choice between options is still open.
+
+**What it unlocks.** Capture no longer runs on my personal computer.
+The bigger machine leaves room for more capture and heavier analysis.
+And the provider adapter makes it simpler to add or swap a data platform later.
 
 ## Guardrails, and where they act
 
@@ -51,8 +66,9 @@ For a step-by-step walkthrough, see [How Market Lab works](how-market-lab-works.
 
 Market Lab is a place to try ideas on a small, real system:
 
+- **Swappable providers.** Keeping the data platform behind one adapter, so it can change without touching capture or storage.
 - **Storage tiers.** Comparing local folders with a hosted lake and database before committing to one.
-- **Safe migration.** Planning a move of capture to new hardware without losing a session.
+- **Safe migration.** Planning the move to AWS so existing data keeps building with no reset.
 - **Pluggable analysis.** A lab engine where each piece of a test run can be swapped.
 
 ## Testing AI models

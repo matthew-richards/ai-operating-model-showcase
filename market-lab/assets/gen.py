@@ -39,7 +39,7 @@ GRAY = ("#F8FAFC", "#94A3B8")
 # 1. Simple architecture: one capture session, left to right.
 o = []
 text(o, 600, 50, "Market Lab: how data moves", 26, bold=True)
-box(o, 40, 120, 200, 110, "Market feed", "licensed data", *GRAY)
+box(o, 40, 120, 200, 110, "Provider adapter", "any data platform", *GRAY)
 box(o, 300, 120, 200, 110, "Rate gate", "shared call limit", *AMBER)
 box(o, 560, 120, 200, 110, "Capture", "scheduled scripts", *BLUE)
 box(o, 820, 120, 200, 110, "Local storage", "private, dated", *GREEN)
@@ -57,22 +57,23 @@ arrow(o, 1020, 350, 1058, 350)
 text(o, 600, 450, "Raw data stays local. Only summaries and charts leave.", 16, SUB, ital=True)
 svg("market-lab-architecture-simple.svg", 1200, 480, o)
 
-# 2. Current state vs future state: only storage moves.
+# 2. Current state vs future state.
 o = []
 text(o, 600, 50, "Market Lab: current vs future state", 26, bold=True)
-text(o, 100, 140, "Today", 20, bold=True)
-box(o, 180, 90, 240, 100, "Capture", "on my computer", *BLUE)
+text(o, 100, 130, "Today", 20, bold=True)
+text(o, 100, 156, "on hiatus", 15, SUB, ital=True)
+box(o, 180, 90, 240, 100, "Capture", "my computer, stopped", *GRAY)
 box(o, 480, 90, 240, 100, "Local storage", "dated folders", *GREEN)
 box(o, 780, 90, 240, 100, "Rundowns", "summaries + charts", *BLUE)
 arrow(o, 420, 140, 478, 140)
 arrow(o, 720, 140, 778, 140)
 text(o, 100, 300, "Planned", 20, bold=True)
-box(o, 180, 250, 240, 100, "Capture", "unchanged", *BLUE)
-box(o, 480, 250, 240, 100, "Cloud storage", "AWS, not final", *GREEN, dash=True)
+box(o, 180, 250, 240, 100, "Capture", "AWS virtual machine", *BLUE, dash=True)
+box(o, 480, 250, 240, 100, "Cloud storage", "private data lake", *GREEN, dash=True)
 box(o, 780, 250, 240, 100, "Rundowns", "unchanged", *BLUE)
 arrow(o, 420, 300, 478, 300, dash=True)
 arrow(o, 720, 300, 778, 300, dash=True)
-text(o, 600, 400, "Only the storage layer moves. Capture and review stay the same.", 16, SUB, ital=True)
+text(o, 600, 400, "Capture and storage move to AWS. Review stays the same.", 16, SUB, ital=True)
 svg("market-lab-current-vs-future.svg", 1200, 430, o)
 
 # 3. Placeholder photo.

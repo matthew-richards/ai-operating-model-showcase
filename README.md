@@ -37,7 +37,7 @@ Jarvis is my personal AI assistant, built around Rokid Glasses. I also use it to
 
 <a href="market-lab/README.md"><img src="market-lab/assets/market-lab-placeholder.png" alt="Placeholder image for Market Lab" width="160" align="right"></a>
 
-Market Lab is my personal market-data pipeline. It captures live market data on a schedule, keeps it private, and turns it into summaries and charts I review.
+Market Lab is my personal market-data pipeline. It captures live market data on a schedule, keeps it private, and turns it into summaries and charts I review. It's modular, so any market-data platform can plug in, and it's on hiatus while it moves to AWS.
 
 **[Explore Market Lab →](market-lab/README.md)**
 

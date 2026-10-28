@@ -3,8 +3,8 @@
 <rect width="1200" height="480" rx="24" fill="#FFFFFF"/>
 <text x="600" y="50" font-size="26" fill="#0F172A" text-anchor="middle" font-weight="700">Market Lab: how data moves</text>
 <rect x="40" y="120" width="200" height="110" rx="16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
-<text x="140.0" y="171.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Market feed</text>
-<text x="140.0" y="197.0" font-size="15" fill="#475569" text-anchor="middle">licensed data</text>
+<text x="140.0" y="171.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Provider adapter</text>
+<text x="140.0" y="197.0" font-size="15" fill="#475569" text-anchor="middle">any data platform</text>
 <rect x="300" y="120" width="200" height="110" rx="16" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
 <text x="400.0" y="171.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Rate gate</text>
 <text x="400.0" y="197.0" font-size="15" fill="#475569" text-anchor="middle">shared call limit</text>
