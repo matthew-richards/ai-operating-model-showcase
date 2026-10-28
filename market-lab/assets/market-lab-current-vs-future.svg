@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748B"/></marker></defs>
+<rect width="1200" height="430" rx="24" fill="#FFFFFF"/>
+<text x="600" y="50" font-size="26" fill="#0F172A" text-anchor="middle" font-weight="700">Market Lab: current vs future state</text>
+<text x="100" y="140" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Today</text>
+<rect x="180" y="90" width="240" height="100" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="300.0" y="136.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Capture</text>
+<text x="300.0" y="162.0" font-size="15" fill="#475569" text-anchor="middle">on my computer</text>
+<rect x="480" y="90" width="240" height="100" rx="16" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+<text x="600.0" y="136.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Local storage</text>
+<text x="600.0" y="162.0" font-size="15" fill="#475569" text-anchor="middle">dated folders</text>
+<rect x="780" y="90" width="240" height="100" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="900.0" y="136.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Rundowns</text>
+<text x="900.0" y="162.0" font-size="15" fill="#475569" text-anchor="middle">summaries + charts</text>
+<line x1="420" y1="140" x2="478" y2="140" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="720" y1="140" x2="778" y2="140" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="100" y="300" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Planned</text>
+<rect x="180" y="250" width="240" height="100" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="300.0" y="296.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Capture</text>
+<text x="300.0" y="322.0" font-size="15" fill="#475569" text-anchor="middle">unchanged</text>
+<rect x="480" y="250" width="240" height="100" rx="16" fill="#ECFDF5" stroke="#10B981" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="600.0" y="296.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Cloud storage</text>
+<text x="600.0" y="322.0" font-size="15" fill="#475569" text-anchor="middle">AWS, not final</text>
+<rect x="780" y="250" width="240" height="100" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="900.0" y="296.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Rundowns</text>
+<text x="900.0" y="322.0" font-size="15" fill="#475569" text-anchor="middle">unchanged</text>
+<line x1="420" y1="300" x2="478" y2="300" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<line x1="720" y1="300" x2="778" y2="300" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<text x="600" y="400" font-size="16" fill="#475569" text-anchor="middle" font-style="italic">Only the storage layer moves. Capture and review stay the same.</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748B"/></marker></defs>
+<rect width="1200" height="480" rx="24" fill="#FFFFFF"/>
+<text x="600" y="50" font-size="26" fill="#0F172A" text-anchor="middle" font-weight="700">Market Lab: how data moves</text>
+<rect x="40" y="120" width="200" height="110" rx="16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+<text x="140.0" y="171.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Market feed</text>
+<text x="140.0" y="197.0" font-size="15" fill="#475569" text-anchor="middle">licensed data</text>
+<rect x="300" y="120" width="200" height="110" rx="16" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+<text x="400.0" y="171.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Rate gate</text>
+<text x="400.0" y="197.0" font-size="15" fill="#475569" text-anchor="middle">shared call limit</text>
+<rect x="560" y="120" width="200" height="110" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="660.0" y="171.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Capture</text>
+<text x="660.0" y="197.0" font-size="15" fill="#475569" text-anchor="middle">scheduled scripts</text>
+<rect x="820" y="120" width="200" height="110" rx="16" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+<text x="920.0" y="171.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Local storage</text>
+<text x="920.0" y="197.0" font-size="15" fill="#475569" text-anchor="middle">private, dated</text>
+<line x1="560" y1="160" x2="502" y2="160" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="300" y1="160" x2="242" y2="160" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="242" y1="192" x2="298" y2="192" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="502" y1="192" x2="558" y2="192" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="760" y1="175" x2="818" y2="175" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="560" y="300" width="200" height="100" rx="16" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+<text x="660.0" y="346.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Watchdog</text>
+<text x="660.0" y="372.0" font-size="15" fill="#475569" text-anchor="middle">restarts capture</text>
+<line x1="660" y1="300" x2="660" y2="232" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
+<rect x="820" y="300" width="200" height="100" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="920.0" y="346.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Rundowns</text>
+<text x="920.0" y="372.0" font-size="15" fill="#475569" text-anchor="middle">summaries + charts</text>
+<line x1="920" y1="230" x2="920" y2="298" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="1060" y="300" width="120" height="100" rx="16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2"/>
+<text x="1120.0" y="346.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Me</text>
+<text x="1120.0" y="372.0" font-size="15" fill="#475569" text-anchor="middle">review</text>
+<line x1="1020" y1="350" x2="1058" y2="350" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<text x="600" y="450" font-size="16" fill="#475569" text-anchor="middle" font-style="italic">Raw data stays local. Only summaries and charts leave.</text>
+</svg>
