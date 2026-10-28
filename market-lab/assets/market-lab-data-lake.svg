@@ -2,9 +2,12 @@
 <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#64748B"/></marker></defs>
 <rect width="1310" height="530" rx="24" fill="#FFFFFF"/>
 <text x="650" y="44" font-size="26" fill="#0F172A" text-anchor="middle" font-weight="700">Market Lab data lake (planned)</text>
-<rect x="30" y="200" width="190" height="100" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
-<text x="125.0" y="246.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Capture buffer</text>
-<text x="125.0" y="272.0" font-size="15" fill="#475569" text-anchor="middle">today's session</text>
+<rect x="30" y="130" width="190" height="100" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+<text x="125.0" y="176.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Capture buffer</text>
+<text x="125.0" y="202.0" font-size="15" fill="#475569" text-anchor="middle">today's session</text>
+<rect x="30" y="300" width="190" height="100" rx="16" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="125.0" y="346.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Historical backfill</text>
+<text x="125.0" y="372.0" font-size="15" fill="#475569" text-anchor="middle">licensed provider</text>
 <rect x="270" y="200" width="190" height="100" rx="16" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
 <text x="365.0" y="246.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Compact</text>
 <text x="365.0" y="272.0" font-size="15" fill="#475569" text-anchor="middle">after each session</text>
@@ -28,7 +31,8 @@
 <rect x="1110" y="320" width="170" height="90" rx="16" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
 <text x="1195.0" y="361.0" font-size="20" fill="#0F172A" text-anchor="middle" font-weight="700">Local copy</text>
 <text x="1195.0" y="387.0" font-size="15" fill="#475569" text-anchor="middle">fast iteration</text>
-<line x1="220" y1="250" x2="268" y2="250" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="220" y1="180" x2="268" y2="235" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)"/>
+<line x1="220" y1="350" x2="268" y2="265" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
 <line x1="460" y1="235" x2="538" y2="190" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
 <line x1="460" y1="265" x2="538" y2="345" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>
 <line x1="810" y1="345" x2="888" y2="270" stroke="#64748B" stroke-width="2.5" marker-end="url(#a)" stroke-dasharray="6 6"/>

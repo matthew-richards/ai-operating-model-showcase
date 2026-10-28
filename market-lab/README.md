@@ -55,7 +55,7 @@ The provider adapter also lets me add or swap a data platform later.
 The data lake is the core of the future state. It's designed, not built.
 The design work covers the zones, the file format, the data model, access, and cost.
 
-![Market Lab data lake, planned: after each session the capture buffer is compacted into a private lake with an optional raw zone and a curated Parquet zone partitioned by date; a catalog with versioned schemas feeds backtests, cross-day SQL, and a local copy for fast iteration](assets/market-lab-data-lake.svg)
+![Market Lab data lake, planned: after each session the capture buffer, plus a planned historical backfill from a licensed provider, is compacted into a private lake with an optional raw zone and a curated Parquet zone partitioned by date; a catalog with versioned schemas feeds backtests, cross-day SQL, and a local copy for fast iteration](assets/market-lab-data-lake.svg)
 
 *Planned. Dashed boxes don't exist yet.*
 
@@ -64,7 +64,7 @@ The design work covers the zones, the file format, the data model, access, and c
 - **Dated folders.** Each capture session writes to its own private, dated folder.
 - **Raw data out of Git.** Live data never gets committed.
 - **Size logging.** After the close, a job records how much data each session wrote and how many calls it used.
-- **Growth and cost models.** Written estimates of how fast the data grows and what each storage option would cost. They drove the design below.
+- **Growth and cost models.** Written estimates of how fast the data grows, what each storage option would cost, and how much disk each historical pull option would use. They drove the design below.
 
 ### Zones
 
@@ -72,6 +72,18 @@ The design work covers the zones, the file format, the data model, access, and c
 - **Raw zone (optional).** Compressed copies of the original captures, kept for replay.
 - **Curated zone.** Cleaned, compacted Parquet tables. This is the durable research copy that backtests read.
 - **One home per role.** Live data lives on the capture machine. The durable research copy lives in the curated zone.
+
+### Historical backfill (planned)
+
+Live capture only builds history going forward. To backtest further back, the lake is planned to take a backfill from a licensed historical market-data provider.
+
+- **Same tables.** Backfilled data lands in the same curated Parquet tables as live capture, with its source recorded.
+- **Event-windowed pulls.** Pull only the dates and windows a test needs, not everything.
+- **A staged ramp.** Start with an hour, then a day, then a week, measuring real sizes before going bigger.
+- **Trimmed at ingest.** Columns a test doesn't need are dropped before saving.
+- **Modeled before buying.** A growth model estimated the disk each pull option would use, with every estimate labeled as one.
+- **Licensed data stays private.** Raw backfill stays in the private lake and is never republished.
+- **I decide on purchases.** Agents size the options. They don't buy anything.
 
 ### Format and data model
 

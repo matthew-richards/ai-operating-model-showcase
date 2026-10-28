@@ -21,9 +21,10 @@ Capture is paused on purpose while it moves to AWS. The steps stay the same afte
 ## After the move (planned)
 
 1. **The session is compacted.** After the close, small capture files are merged into Parquet, one table per dataset.
-2. **Data lands in the lake.** Curated tables are split by session date. Compressed raw copies are optional.
-3. **The catalog updates.** New partitions are registered, with a schema version on each table.
-4. **Backtests read it.** The lab engine loads a date range and only the columns it needs.
+2. **Historical backfill joins it.** Data from a licensed historical provider lands in the same tables, with its source recorded.
+3. **Data lands in the lake.** Curated tables are split by session date. Compressed raw copies are optional.
+4. **The catalog updates.** New partitions are registered, with a schema version on each table.
+5. **Backtests read it.** The lab engine loads a date range and only the columns it needs.
 
 ## Around every turn
 
